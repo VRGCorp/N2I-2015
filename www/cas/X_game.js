@@ -310,9 +310,9 @@ addEventListener ("mousemove", mouse_move, false);
 addEventListener ("mousedown", mouse_press, false);
 addEventListener ("mouseup", mouse_release, false);
 
-obj.addEventListener('touchmove', mouse_move, false);
-obj.addEventListener('touchstart', mouse_press, false);
-obj.addEventListener('touchend', mouse_release, false);
+addEventListener('touchmove', mouse_move, false);
+addEventListener('touchstart', mouse_press, false);
+addEventListener('touchend', mouse_release, false);
 
 addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
