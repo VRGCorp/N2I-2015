@@ -12,7 +12,7 @@
 </head>
 <body>
 	<header>
-		<img src="/images/team.jpg"
+		<img src="/images/team.jpg"></img>
 	</header>
 	<nav>
 		<ul>

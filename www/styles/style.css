@@ -1,0 +1,25 @@
+html{
+	width:100%;
+	background-color: #DFD;
+}
+
+body{
+	margin: auto;
+	width: 60%;
+	background-color: #DDD;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+nav{
+	display: table;
+	width: 100%;
+}
+
+ul{
+	display: table-row;
+}
+
+li{
+	display: table-cell;
+}
