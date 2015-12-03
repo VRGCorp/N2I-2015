@@ -264,6 +264,10 @@ function pointer_pos(canvas, event, tactile){
         }
         x -= canvas.offsetLeft;
         y -= canvas.offsetTop;
+	if(tactile){
+		window.alert(x);
+		window.alert(y);
+	}
 	return {x: x, y: y};
 }
 
@@ -280,8 +284,6 @@ function mouse_move(e, tactile) {
 function mouse_press(e, tactile) {
 	if(press_count==0){
 		var pos=pointer_pos(canvas, e, tactile);
-		window.alert(pos.x);
-		window.alert(pos.y);
 
 		pressed = true;
 		released=false;
@@ -295,8 +297,6 @@ function mouse_release(e, tactile) {
 	press_count--;
 	if(press_count==0){
 		var pos=pointer_pos(canvas, e, tactile);
-		window.alert(pos.x);
-		window.alert(pos.y);
 
 		pressed  = false;
 		released = true;
