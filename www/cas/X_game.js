@@ -255,15 +255,18 @@ var release_y = 0;
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
 function pointer_pos(canvas, event, tactile){
 
-	if (event.x != undefined && event.y != undefined &&!tactile){
+	if (event.x != undefined && event.y != undefined && !tactile){
 		x = event.x;
 		y = event.y;
-	}else{
+	}
+	else{
 		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
 		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-        }
-        x -= canvas.offsetLeft;
-        y -= canvas.offsetTop;
+
+    }
+    x -= canvas.offsetLeft;
+    y -= canvas.offsetTop;
+	
 	if(tactile){
 		window.alert(x);
 		window.alert(y);
@@ -316,7 +319,7 @@ canvas.addEventListener ("mousemove", function (e){mouse_move(e, false)}, false)
 canvas.addEventListener ("mousedown", function (e){mouse_press(e, false)}, false);
 canvas.addEventListener ("mouseup", function (e){mouse_release(e, false)}, false);
 
-canvas.addEventListener('touchmove', function (e){mouse_move(e, true)}, false);
+//canvas.addEventListener('touchmove', function (e){mouse_move(e, true)}, false);
 canvas.addEventListener('touchstart', function (e){mouse_press(e, true)}, false);
 canvas.addEventListener('touchend', function (e){mouse_release(e, true)}, false);
 
