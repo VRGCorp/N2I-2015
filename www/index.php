@@ -36,10 +36,10 @@
 	<?php
 		for($id=0; $id<10; $id++){
 			$title_file='cas/'.$id.'_titre.txt';
-			$cas_file='cas/'.$id.'_cas.txt';
-			$reaction_file='cas/'.$id.'_reaction.txt';
-			$jeu_file='cas/'.$id.'_jeu.txt';
-			
+			$cas_file='cas/'.$id.'_cas.php';
+			$reaction_file='cas/'.$id.'_reaction.php';
+			$jeu_file='cas/'.$id.'_jeu.php';
+
 			if(file_exists($title_file)){
 				echo '<section>';
 
