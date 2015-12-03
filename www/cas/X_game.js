@@ -270,7 +270,6 @@ function mouse_pos(canvas, event){
 
 function mouse_move(e) {
 	var pos=mouse_pos(canvas, e);
-	console.log(pos);
 
 	mouse_x = pos.x;
 	mouse_y = pos.y;
@@ -295,7 +294,6 @@ function mouse_release(e) {
 	press_count--;
 	if(press_count==0){
 		var pos=mouse_pos(canvas, e);
-
 		pressed  = false;
 		released = true;
 		release_x= pos.x;
@@ -307,10 +305,14 @@ function mouse_click(e) {
 	mouseup(e);
 }
 
-addEventListener ("mousemove", mouse_move, false);
 addEventListener ("click", mouse_click, false);
+addEventListener ("mousemove", mouse_move, false);
 addEventListener ("mousedown", mouse_press, false);
 addEventListener ("mouseup", mouse_release, false);
+
+obj.addEventListener('touchmove', mouse_move, false);
+obj.addEventListener('touchstart', mouse_press, false);
+obj.addEventListener('touchend', mouse_release, false);
 
 addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
