@@ -278,8 +278,6 @@ function pointer_pos(canvas, event, tactile){
 
 function mouse_move(e, tactile) {
 	var pos=pointer_pos(canvas, e, tactile);
-	window.alert(pos.x);
-	window.alert(pos.y);
 	mouse_x = pos.x;
 	mouse_y = pos.y;
 }
