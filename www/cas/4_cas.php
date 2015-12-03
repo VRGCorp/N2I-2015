@@ -1,0 +1,2 @@
+Un tsunami est une catastrophe naturelle pendant laquelle une grande vague recouvre brusquement les terres.
+La vitesse et la taille de la vague très imposante provoque beaucoup de dégats en détruisant des batîments et des véhicules.
