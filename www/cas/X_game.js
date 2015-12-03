@@ -163,6 +163,7 @@ var main = function () {
 
 // Create the canvas
 var canvas = document.createElement("canvas");
+var canvas_bounds = canvas.getBoundingClientRect();
 var ctx = canvas.getContext("2d");
 canvas.id = 'game-canvas-'+case_id;
 canvas.width = 768;
@@ -251,16 +252,16 @@ var release_x = 0;
 var release_y = 0;
 
 addEventListener ("mousemove", function (e) {
-	mouse_x = e.x-canvas.offsetLeft;
-	mouse_y = e.y-canvas.offsetTop;
+	mouse_x = e.x-canvas_bounds.left;
+	mouse_y = e.y-canvas_bounds.top;
 }, false);
 
 addEventListener ("mousedown", function (e) {
 	if(press_count==0){
 		pressed = true;
 		released=false;
-		press_x = e.x-canvas.offsetLeft;
-		press_y = e.y-canvas.offsetTop;
+		press_x = e.x-canvas_bounds.left;
+		press_y = e.y-canvas_bounds.top;
 	}
 	press_count++;
 }, false);
@@ -270,8 +271,8 @@ addEventListener ("mouseup", function (e) {
 	if(press_count==0){
 		pressed  = false;
 		released = true;
-		release_x= e.x-canvas.offsetLeft;
-		release_y= e.y-canvas.offsetTop;
+		release_x= e.x-canvas_bounds.left;
+		release_y= e.y-canvas_bounds.top;
 	}
 }, false);
 
