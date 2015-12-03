@@ -28,6 +28,37 @@
 		</ul>
 	</nav>
 
+	<?php
+		for(int id=0; id<10; id++){
+			$title_file='cas/'.id.'_titre.txt';
+			$cas_file='cas/'.id.'_cas.txt';
+			$reaction_file='cas/'.id.'_reaction.txt';
+			$jeu_file='cas/'.id.'_jeu.txt';
+			if(file_exists($title_file)){
+				echo '<section>';
+
+				echo '<h2>';
+				include($title_file);
+				echo '</h2>';
+
+				echo '<article>';
+				include($cas_file);
+				echo '</article>';
+
+				echo '<article>';
+				include($reaction_file);
+				echo '</article>';
+
+				echo '<article>';
+				include($jeu_file);
+				echo '</article>';
+
+				echo '</section>';
+			}
+
+		}
+
+	 ?>
 	<section>
 		<h2>Cas 1</h2>
 		<article>
