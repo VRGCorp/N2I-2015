@@ -169,7 +169,7 @@ canvas.width = 768;
 canvas.height = 128;
 document.getElementById('game-wrapper-'+case_id).appendChild(canvas);
 
-var canvas_bounds = document.get_element_by_id(canva.id).getBoundingClientRect();
+var canvas_bounds = document.get_element_by_id(canvas.id).getBoundingClientRect();
 
 
 
@@ -292,7 +292,7 @@ addEventListener ("mouseup", function (e) {
 	press_count--;
 	if(press_count==0){
 		var pos=mouse_pos(canvas, e);
-		
+
 		pressed  = false;
 		released = true;
 		release_x= pos.x;
