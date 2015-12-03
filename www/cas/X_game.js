@@ -166,7 +166,7 @@ var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.id = 'game-canvas-'+case_id;
 canvas.width = 768;
-canvas.height = 128;
+canvas.height = 256;
 document.getElementById('game-wrapper-'+case_id).appendChild(canvas);
 
 var canvas_bounds = canvas.getBoundingClientRect();
@@ -301,8 +301,10 @@ function mouse_release(e) {
 	}
 }
 function mouse_click(e) {
-	mousedown(e);
-	mouseup(e);
+	if(!pressed){
+		mouse_press(e);
+		mouse_release(e);
+	}
 }
 
 addEventListener ("click", mouse_click, false);
