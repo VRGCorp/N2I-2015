@@ -95,21 +95,15 @@ var update = function (delta) {
 	level=Math.floor(hero.score/10.0);
 	game_speed=1+level/10.0;
 	var modifier=delta*game_speed;
-	if (38 in keysDown) {
+	if (pressed) {
 		var new_y = hero.y-hero.speed * modifier;
 		if(new_y>=0){
 			hero.y = new_y;
 		} else {
 			hero.y = 0;
 		}
-	}
-	if (40 in keysDown) {
-		var new_y = hero.y+hero.speed * modifier;
-		if(new_y<canvas.height-hero.height){
-			hero.y = new_y;
-		} else {
-			hero.y=canvas.height-hero.height
-		}
+		hero.x=mouse_x;
+		hero.y=mouse_y;
 	}
 
 
@@ -238,20 +232,35 @@ var star = {
 	speed: 192 // movement in pixels per second
 };
 
-// Handle keyboard controls
+// Handle keyboard input
 var keysDown = {};
-var press_count=0;
+
+// Handle mouse input
+var pressed=false;
 var released=false;
+
+var press_count=0;
+
+var mouse_x = 0;
+var mouse_y = 0;
+
 var press_x = 0;
 var press_y = 0;
+
 var release_x = 0;
 var release_y = 0;
 
+addEventListener ("mousemove", function (e) {
+	mouse_x = e.clientX;
+	mouse_y = e.clientY;
+}, false);
+
 addEventListener ("mousedown", function (e) {
 	if(press_count==0){
+		pressed = true;
 		released=false;
 		press_x = e.clientX;
-		press_y = e.clienty;
+		press_y = e.clientY;
 	}
 	press_count++;
 }, false);
@@ -259,9 +268,10 @@ addEventListener ("mousedown", function (e) {
 addEventListener ("mouseup", function (e) {
 	press_count--;
 	if(press_count==0){
+		pressed  = false;
 		released = true;
-		release_x = e.clientX;
-		release_y = e.clienty;
+		release_x= e.clientX;
+		release_y= e.clientY;
 	}
 }, false);
 
