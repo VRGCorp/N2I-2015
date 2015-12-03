@@ -1,4 +1,4 @@
 <?php
 	include('/passwords.php');
-	echo $USERNAME_MYSQL;
+	echo $USR_MYSQL;
 ?>
