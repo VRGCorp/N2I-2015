@@ -169,7 +169,7 @@ canvas.width = 768;
 canvas.height = 128;
 document.getElementById('game-wrapper-'+case_id).appendChild(canvas);
 
-var canvas_bounds = document.get_element_by_id(canva.id).getBoundingClientRect();
+var canvas_bounds = canvas.getBoundingClientRect();
 
 
 
@@ -268,15 +268,18 @@ function mouse_pos(canvas, event){
 }
 
 
-addEventListener ("mousemove", function (e) {
+function mouse_move(e) {
 	var pos=mouse_pos(canvas, e);
 	console.log(pos);
 
 	mouse_x = pos.x;
 	mouse_y = pos.y;
-}, false);
+}
 
-addEventListener ("mousedown", function (e) {
+
+
+
+function mouse_press(e) {
 	if(press_count==0){
 		var pos=mouse_pos(canvas, e);
 
@@ -286,19 +289,28 @@ addEventListener ("mousedown", function (e) {
 		press_y = pos.y;
 	}
 	press_count++;
-}, false);
+}
 
-addEventListener ("mouseup", function (e) {
+function mouse_release(e) {
 	press_count--;
 	if(press_count==0){
 		var pos=mouse_pos(canvas, e);
-		
+
 		pressed  = false;
 		released = true;
 		release_x= pos.x;
 		release_y= pos.y;
 	}
-}, false);
+}
+function mouse_click(e) {
+	mousedown(e);
+	mouseup(e);
+}
+
+addEventListener ("mousemove", mouse_move, false);
+addEventListener ("click", mouse_click, false);
+addEventListener ("mousedown", mouse_press, false);
+addEventListener ("mouseup", mouse_release, false);
 
 addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
