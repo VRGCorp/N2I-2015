@@ -1,0 +1,8 @@
+#game-wrapper{
+	width:100%;
+}
+
+#game-canvas{
+	margin: auto;
+	display: block;
+}
