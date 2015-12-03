@@ -254,27 +254,24 @@ var release_y = 0;
 
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
 function pointer_pos(canvas, event, tactile){
-	if(tactile){
-		x=event.pageX;
-		y=event.pageY;
-	} else {
-		if (event.x != undefined && event.y != undefined){
-	          x = event.x;
-	          y = event.y;
-	        }else{
-	          x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-	          y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-	        }
-	        x -= canvas.offsetLeft;
-	        y -= canvas.offsetTop;
-	}
+
+	if (event.x != undefined && event.y != undefined){
+		x = event.x;
+		y = event.y;
+	}else{
+		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        }
+        x -= canvas.offsetLeft;
+        y -= canvas.offsetTop;
 	return {x: x, y: y};
 }
 
 
 function mouse_move(e, tactile) {
 	var pos=pointer_pos(canvas, e, tactile);
-
+	window.alert(pos.x);
+	window.alert(pos.y);
 	mouse_x = pos.x;
 	mouse_y = pos.y;
 }
@@ -285,6 +282,8 @@ function mouse_move(e, tactile) {
 function mouse_press(e, tactile) {
 	if(press_count==0){
 		var pos=pointer_pos(canvas, e, tactile);
+		window.alert(pos.x);
+		window.alert(pos.y);
 
 		pressed = true;
 		released=false;
@@ -298,6 +297,9 @@ function mouse_release(e, tactile) {
 	press_count--;
 	if(press_count==0){
 		var pos=pointer_pos(canvas, e, tactile);
+		window.alert(pos.x);
+		window.alert(pos.y);
+		
 		pressed  = false;
 		released = true;
 		release_x= pos.x;
