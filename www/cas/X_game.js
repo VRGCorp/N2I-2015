@@ -260,6 +260,10 @@ function pointer_pos(canvas, event, tactile){
 		y = event.y;
 	}
 	else{
+		if(tactile){
+			window.alert(x);
+			window.alert(y);
+		}
 		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
 		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
 
