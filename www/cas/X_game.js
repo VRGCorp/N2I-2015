@@ -169,7 +169,7 @@ canvas.width = 768;
 canvas.height = 128;
 document.getElementById('game-wrapper-'+case_id).appendChild(canvas);
 
-var canvas_bounds = document.get_element_by_id(canvas.id).getBoundingClientRect();
+var canvas_bounds = canvas.getBoundingClientRect();
 
 
 
