@@ -4,8 +4,8 @@
 ?>
 <?php
 
-echo "cloning";
-exec("cd ../git git pull; rm -rf ../www/*; cp -r ./www/* ../www/");
+echo "pulling";
+exec("cd ../git; git pull; cd ..; rm -rf ./www/*; cp -r ./git/www/* ./www/");
 echo "done";
  
 
