@@ -252,18 +252,38 @@ var press_y = 0;
 var release_x = 0;
 var release_y = 0;
 
+// http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
+function mouse_pos(canvas, event){
+	if (event.x != undefined && event.y != undefined){
+          x = event.x;
+          y = event.y;
+        }else{
+          x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+          y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        }
+        x -= canvas.offsetLeft;
+        y -= canvas.offsetTop;
+
+	return {x: x, y: y};
+}
+
+
 addEventListener ("mousemove", function (e) {
-	console.log(canvas_bounds);
-	mouse_x = e.x-canvas_bounds.left;
-	mouse_y = e.y-canvas_bounds.top;
+	var pos=mouse_pos(canvas, e);
+	console.log(pos);
+
+	mouse_x = pos.x;
+	mouse_y = pos.y;
 }, false);
 
 addEventListener ("mousedown", function (e) {
 	if(press_count==0){
+		var pos=mouse_pos(canvas, e);
+
 		pressed = true;
 		released=false;
-		press_x = e.x-canvas_bounds.left;
-		press_y = e.y-canvas_bounds.top;
+		press_x = pos.x;
+		press_y = pos.y;
 	}
 	press_count++;
 }, false);
@@ -271,10 +291,12 @@ addEventListener ("mousedown", function (e) {
 addEventListener ("mouseup", function (e) {
 	press_count--;
 	if(press_count==0){
+		var pos=mouse_pos(canvas, e);
+		
 		pressed  = false;
 		released = true;
-		release_x= e.x-canvas_bounds.left;
-		release_y= e.y-canvas_bounds.top;
+		release_x= pos.x;
+		release_y= pos.y;
 	}
 }, false);
 
