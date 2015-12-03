@@ -255,21 +255,16 @@ var release_y = 0;
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
 function pointer_pos(canvas, event, tactile){
 
-	if(tactile){
-		x = event.pageX;
-		y = event.pageY;
-	}else {
-		if (event.x != undefined && event.y != undefined){
-			if(tactile){
+	if (event.x != undefined && event.y != undefined &&!tactile){
+		if(tactile){
 
-			x = event.x;
-			y = event.y;
-		}
-		}else{
-			x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-			y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-	        }
+		x = event.x;
+		y = event.y;
 	}
+	}else{
+		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        }
         x -= canvas.offsetLeft;
         y -= canvas.offsetTop;
 	return {x: x, y: y};
