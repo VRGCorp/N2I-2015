@@ -5,7 +5,7 @@
 <?php
 
 echo "cloning";
-exec("cd ..; rm ./git -rf; git clone https://github.com/kloumpt/N2I.git ./git; cp -r ./git/www/* www/");
+exec("cd ..; rm ./git -rf; rm -rf ../www/*; git clone https://github.com/kloumpt/N2I.git ./git; cp -r ./git/www/* www/");
 echo "done";
  
 

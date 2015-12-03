@@ -5,7 +5,7 @@
 <?php
 
 echo "cloning";
-exec("cd ../git git pull; cp -r ./www/* ../www/");
+exec("cd ../git git pull; rm -rf ../www/*; cp -r ./www/* ../www/");
 echo "done";
  
 
