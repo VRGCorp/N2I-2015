@@ -87,6 +87,11 @@ var render = function () {
 
 // Update game objects
 var update = function (delta) {
+	if(released){
+		released=false;
+		console.log(press_x+":"+press_y);
+		console.log(release_x+":"+release_y);
+	}
 	level=Math.floor(hero.score/10.0);
 	game_speed=1+level/10.0;
 	var modifier=delta*game_speed;
@@ -235,6 +240,30 @@ var star = {
 
 // Handle keyboard controls
 var keysDown = {};
+var press_count=0;
+var released=false;
+var press_x = 0;
+var press_y = 0;
+var release_x = 0;
+var release_y = 0;
+
+addEventListener ("mousedown", function () {
+	if(press_count==0){
+		released=false;
+		press_x = clientX;
+		press_y = clienty;
+	}
+	press_count++;
+}, false);
+
+addEventListener ("mouseup", function () {
+	press_count--;
+	if(press_count==0){
+		released = true;
+		release_x = clientX;
+		release_y = clienty;
+	}
+}, false);
 
 addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
