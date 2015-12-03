@@ -251,16 +251,16 @@ var release_x = 0;
 var release_y = 0;
 
 addEventListener ("mousemove", function (e) {
-	mouse_x = e.clientX;
-	mouse_y = e.clientY;
+	mouse_x = e.x-canvas.offsetLeft;
+	mouse_y = e.y-canvas.offsetTop;
 }, false);
 
 addEventListener ("mousedown", function (e) {
 	if(press_count==0){
 		pressed = true;
 		released=false;
-		press_x = e.clientX;
-		press_y = e.clientY;
+		press_x = e.x-canvas.offsetLeft;
+		press_y = e.y-canvas.offsetTop;
 	}
 	press_count++;
 }, false);
@@ -270,8 +270,8 @@ addEventListener ("mouseup", function (e) {
 	if(press_count==0){
 		pressed  = false;
 		released = true;
-		release_x= e.clientX;
-		release_y= e.clientY;
+		release_x= e.x-canvas.offsetLeft;
+		release_y= e.y-canvas.offsetTop;
 	}
 }, false);
 
