@@ -22,4 +22,5 @@ ul{
 
 li{
 	display: table-cell;
+	text-align: center;
 }
