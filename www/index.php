@@ -34,7 +34,7 @@
 	</nav>
 
 	<?php
-		for(int id=0; id<10; id++){
+		for($id=0; $id<10; $id++){
 			$title_file='cas/'.id.'_titre.txt';
 			$cas_file='cas/'.id.'_cas.txt';
 			$reaction_file='cas/'.id.'_reaction.txt';
