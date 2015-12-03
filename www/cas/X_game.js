@@ -253,23 +253,27 @@ var release_x = 0;
 var release_y = 0;
 
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
-function mouse_pos(canvas, event){
-	if (event.x != undefined && event.y != undefined){
-          x = event.x;
-          y = event.y;
-        }else{
-          x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-          y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-        }
-        x -= canvas.offsetLeft;
-        y -= canvas.offsetTop;
-
+function pointer_pos(canvas, event, tactile){
+	if(tactile){
+		x=event.pageX;
+		y=event.pageY;
+	} else {
+		if (event.x != undefined && event.y != undefined){
+	          x = event.x;
+	          y = event.y;
+	        }else{
+	          x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+	          y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+	        }
+	        x -= canvas.offsetLeft;
+	        y -= canvas.offsetTop;
+	}
 	return {x: x, y: y};
 }
 
 
-function mouse_move(e) {
-	var pos=mouse_pos(canvas, e);
+function mouse_move(e, tactile) {
+	var pos=pointer_pos(canvas, e, tactile);
 
 	mouse_x = pos.x;
 	mouse_y = pos.y;
@@ -278,9 +282,9 @@ function mouse_move(e) {
 
 
 
-function mouse_press(e) {
+function mouse_press(e, tactile) {
 	if(press_count==0){
-		var pos=mouse_pos(canvas, e);
+		var pos=pointer_pos(canvas, e, tactile);
 
 		pressed = true;
 		released=false;
@@ -290,31 +294,31 @@ function mouse_press(e) {
 	press_count++;
 }
 
-function mouse_release(e) {
+function mouse_release(e, tactile) {
 	press_count--;
 	if(press_count==0){
-		var pos=mouse_pos(canvas, e);
+		var pos=pointer_pos(canvas, e, tactile);
 		pressed  = false;
 		released = true;
 		release_x= pos.x;
 		release_y= pos.y;
 	}
 }
-function mouse_click(e) {
+function mouse_click(e, tactile) {
 	if(!pressed){
-		mouse_press(e);
-		mouse_release(e);
+		mouse_press(e, tactile);
+		mouse_release(e, tactile);
 	}
 }
 
-canvas.addEventListener ("click", mouse_click, false);
-canvas.addEventListener ("mousemove", mouse_move, false);
-canvas.addEventListener ("mousedown", mouse_press, false);
-canvas.addEventListener ("mouseup", mouse_release, false);
+canvas.addEventListener ("click", function (e){mouse_click(e, false)}, false);
+canvas.addEventListener ("mousemove", function (e){mouse_move(e, false)}, false);
+canvas.addEventListener ("mousedown", function (e){mouse_press(e, false)}, false);
+canvas.addEventListener ("mouseup", function (e){mouse_release(e, false)}, false);
 
-canvas.addEventListener('touchmove', mouse_move, false);
-canvas.addEventListener('touchstart', mouse_press, false);
-canvas.addEventListener('touchend', mouse_release, false);
+canvas.addEventListener('touchmove', function (e){mouse_move(e, true)}, false);
+canvas.addEventListener('touchstart', function (e){mouse_press(e, true)}, false);
+canvas.addEventListener('touchend', function (e){mouse_release(e, true)}, false);
 
 canvas.addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
