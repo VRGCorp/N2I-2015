@@ -256,11 +256,8 @@ var release_y = 0;
 function pointer_pos(canvas, event, tactile){
 
 	if (event.x != undefined && event.y != undefined &&!tactile){
-		if(tactile){
-
 		x = event.x;
 		y = event.y;
-	}
 	}else{
 		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
 		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
