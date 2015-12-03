@@ -247,21 +247,21 @@ var press_y = 0;
 var release_x = 0;
 var release_y = 0;
 
-addEventListener ("mousedown", function () {
+addEventListener ("mousedown", function (e) {
 	if(press_count==0){
 		released=false;
-		press_x = clientX;
-		press_y = clienty;
+		press_x = e.clientX;
+		press_y = e.clienty;
 	}
 	press_count++;
 }, false);
 
-addEventListener ("mouseup", function () {
+addEventListener ("mouseup", function (e) {
 	press_count--;
 	if(press_count==0){
 		released = true;
-		release_x = clientX;
-		release_y = clienty;
+		release_x = e.clientX;
+		release_y = e.clienty;
 	}
 }, false);
 
