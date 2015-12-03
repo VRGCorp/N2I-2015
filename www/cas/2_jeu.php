@@ -2,5 +2,5 @@
 	<script>
 		var case_id="2";
 	</script>
-	<script src="X_game.js"></script>
+	<script src="/cas/X_game.js"></script>
 </div>
