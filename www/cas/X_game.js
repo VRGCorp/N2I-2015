@@ -307,20 +307,20 @@ function mouse_click(e) {
 	}
 }
 
-addEventListener ("click", mouse_click, false);
-addEventListener ("mousemove", mouse_move, false);
-addEventListener ("mousedown", mouse_press, false);
-addEventListener ("mouseup", mouse_release, false);
+canvas.addEventListener ("click", mouse_click, false);
+canvas.addEventListener ("mousemove", mouse_move, false);
+canvas.addEventListener ("mousedown", mouse_press, false);
+canvas.addEventListener ("mouseup", mouse_release, false);
 
-addEventListener('touchmove', mouse_move, false);
-addEventListener('touchstart', mouse_press, false);
-addEventListener('touchend', mouse_release, false);
+canvas.addEventListener('touchmove', mouse_move, false);
+canvas.addEventListener('touchstart', mouse_press, false);
+canvas.addEventListener('touchend', mouse_release, false);
 
-addEventListener("keydown", function (e) {
+canvas.addEventListener("keydown", function (e) {
 	keysDown[e.keyCode] = true;
 }, false);
 
-addEventListener("keyup", function (e) {
+canvas.addEventListener("keyup", function (e) {
 	delete keysDown[e.keyCode];
 }, false);
 
