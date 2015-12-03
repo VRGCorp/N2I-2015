@@ -163,12 +163,13 @@ var main = function () {
 
 // Create the canvas
 var canvas = document.createElement("canvas");
-var canvas_bounds = canvas.getBoundingClientRect();
 var ctx = canvas.getContext("2d");
 canvas.id = 'game-canvas-'+case_id;
 canvas.width = 768;
 canvas.height = 128;
 document.getElementById('game-wrapper-'+case_id).appendChild(canvas);
+
+var canvas_bounds = document.get_element_by_id(canva.id).getBoundingClientRect();
 
 
 
@@ -252,6 +253,7 @@ var release_x = 0;
 var release_y = 0;
 
 addEventListener ("mousemove", function (e) {
+	console.log(canvas_bounds);
 	mouse_x = e.x-canvas_bounds.left;
 	mouse_y = e.y-canvas_bounds.top;
 }, false);
