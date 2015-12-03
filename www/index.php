@@ -1,4 +1,7 @@
 <?php
-	include('/homez.2193/vrgcorpngz/passwords.php');
+	include('vars.php');
+?>
+<?php
+	include($ROOT.'/passwords.php');
 	echo $USR_MYSQL;
 ?>
