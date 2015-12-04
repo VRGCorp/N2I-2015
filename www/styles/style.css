@@ -165,6 +165,7 @@ img.illustration {
 	height: auto;
 	float: right;
 	margin: 2%;
+	box-shadow: 0 0 10px black;
 }
 
 section {
