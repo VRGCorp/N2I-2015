@@ -2,7 +2,9 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 ?>
-
+<?php
+	exec("cd ../git; git pull; cd ..; rm -rf ./www/*; cp -r ./git/www/* ./www/; cd www");
+?>
 
 <?php
 	include('vars.php');
