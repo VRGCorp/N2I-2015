@@ -318,7 +318,7 @@ canvas.addEventListener ("mousemove", function (e){mouse_move(e, false)}, false)
 canvas.addEventListener ("mousedown", function (e){mouse_press(e, false)}, false);
 canvas.addEventListener ("mouseup", function (e){mouse_release(e, false)}, false);
 
-canvas.addEventListener('touchmove', function (e){mouse_move(e, true)}, false);
+//canvas.addEventListener('touchmove', function (e){mouse_move(e, true)}, false);
 canvas.addEventListener('touchstart', function (e){mouse_press(e, true)}, false);
 canvas.addEventListener('touchend', function (e){mouse_release(e, true)}, false);
 
