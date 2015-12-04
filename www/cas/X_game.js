@@ -43,7 +43,7 @@ var render = function () {
 	if (bgReady) {
 		ctx.drawImage(bgImage, world.x+offset.x, world.y+offset.y, world.width, world.height);
 	}
-	
+
 	ctx.fillStyle = "rgb(64, 64, 64)";
 	for(x=0; x<=world.width+32; x+=32){
 		ctx.fillRect(offset.x+x, offset.y+0, 1, world.height);
@@ -225,8 +225,8 @@ var starImage = loadSprite("images/star.png", function(){starReady = true;});
 var world = {
 	x: 0,
 	y: 0,
-	width: 640*2,
-	height: 384*2
+	width: 640*3,
+	height: 384*3
 };
 var hero = {
 	life: 10,
