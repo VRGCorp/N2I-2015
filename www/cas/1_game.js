@@ -131,6 +131,7 @@ var update = function (delta) {
 		}
 	}
 	for(var i; i<100; i++){
+		console.log(dangers[i].x+":"+dangers[i].y+":"+dangers[i].enabled);
 		if (dangers[i].enabled && check_intersection(user, dangers[i])) {
 			reset_user(user);
 		}
@@ -231,7 +232,6 @@ for(var n=0; n<100; n++){
 		img: fumeeImage,
 		enabled: true
 	}
-	console.log(dangers[n].x+":"+dangers[n].y);
 }
 
 // Handle keyboard input
@@ -254,13 +254,9 @@ var release_y = 0;
 
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
 function pointer_pos(canvas, event){
-	/*if (event.x != undefined && event.y != undefined){
-		x = event.clientX;
-		y = event.clientY;
-	}else{*/
-		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-        //}
+	x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+	y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+
         x -= canvas.offsetLeft;
         y -= canvas.offsetTop;
 	return {x: x, y: y};
