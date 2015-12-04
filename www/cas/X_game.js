@@ -94,6 +94,7 @@ var update = function (delta) {
 
 	if(released){
 		hero.destination={mouse_x, mouse_y};
+		console.log(hero.destination);
 		released=false;
 	}
 	var dir_x=hero.destination.x-hero.x;
