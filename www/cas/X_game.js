@@ -102,8 +102,8 @@ var update = function (delta) {
 	if(distance!=0){
 		dir_x/=distance;
 		dir_y/=distance;
-		var new_x = hero.y-hero.speed * modifier*dir_x;
-		var new_y = hero.y-hero.speed * modifier*dir_y;
+		var new_x = hero.x+hero.speed * modifier*dir_x;
+		var new_y = hero.y+hero.speed * modifier*dir_y;
 
 		if(new_y>=0 && new_y< canvas.height-hero.height){
 			hero.y = new_y;
