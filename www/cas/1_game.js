@@ -206,14 +206,14 @@ var user = {
 	height: 32,
 	img: userImage,
 	destination: {x: 0, y: 0},
-	speed: 128,
+	speed: 256,
 	score: 0
 };
 
 var humansToRescue = [];
 humansToRescue.push({
 	x: world.width*1./5,
-	y: world.height*1./5,
+	y: world.height*1./4,
 	width: 32,
 	height: 32,
 	img: humanAImage,
@@ -221,7 +221,7 @@ humansToRescue.push({
 });
 humansToRescue.push({
 	x: world.width*1./5,
-	y: world.height*3./5,
+	y: world.height*3./4,
 	width: 32,
 	height: 32,
 	img: humanAImage,
@@ -229,7 +229,7 @@ humansToRescue.push({
 });
 humansToRescue.push({
 	x: world.width*3./5,
-	y: world.height*1./5,
+	y: world.height*1./4,
 	width: 32,
 	height: 32,
 	img: humanAImage,
@@ -237,14 +237,14 @@ humansToRescue.push({
 });
 humansToRescue.push({
 	x: world.width*3./5,
-	y: world.height*3./5,
+	y: world.height*3./4,
 	width: 32,
 	height: 32,
 	img: humanAImage,
 	enabled: true
 });
 var dangers = [];
-for(var n=0; n<10; n++){
+for(var n=0; n<30; n++){
 	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
