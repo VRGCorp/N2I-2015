@@ -211,16 +211,38 @@ var user = {
 };
 
 var humansToRescue = [];
-for(var n=0; n<3; n++){
-	humansToRescue.push({
-		x: Math.random()*world.width,
-		y: Math.random()*world.height,
-		width: 32,
-		height: 32,
-		img: humanAImage,
-		enabled: true
-	});
-}
+humansToRescue.push({
+	x: world.width*1./4,
+	y: world.height*1./4,
+	width: 32,
+	height: 32,
+	img: humanAImage,
+	enabled: true
+});
+humansToRescue.push({
+	x: world.width*1./4,
+	y: world.height*3./4,
+	width: 32,
+	height: 32,
+	img: humanAImage,
+	enabled: true
+});
+humansToRescue.push({
+	x: world.width*3./4,
+	y: world.height*1./4,
+	width: 32,
+	height: 32,
+	img: humanAImage,
+	enabled: true
+});
+humansToRescue.push({
+	x: world.width*3./4,
+	y: world.height*3./4,
+	width: 32,
+	height: 32,
+	img: humanAImage,
+	enabled: true
+});
 var dangers = [];
 for(var n=0; n<10; n++){
 	dangers.push({
@@ -273,7 +295,7 @@ function mouse_move(e) {
 
 function mouse_press(e) {
 	var pos=pointer_pos(canvas, e);
-
+	console.log(pos);
 	pressed = true;
 	mouse_x = pos.x;
 	mouse_y = pos.y;
