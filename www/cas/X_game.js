@@ -37,16 +37,20 @@ function check_intersection(object_a, object_b){
 var render = function () {
 	ctx.fillStyle = "rgb(0, 0, 0)";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
-	/*
+	var offset={x: -hero.x+canvas.width/2, y: -hero.y+canvas.height/2};
+
+
+	var grid_start={x: Math.floor((hero.x-canvas.width)/32)*32, y: Math.floor((hero.y-canvas.height)/32)*32}
+
 	ctx.fillStyle = "rgb(64, 64, 64)";
 	for(x=0; x<=canvas.width; x+=32){
-		ctx.fillRect(x, 0, 1, canvas.height);
+		ctx.fillRect(grid_start.x+x, grid_start.y+0, 1, canvas.height);
 	}
 	for(y=0; y<=canvas.height; y+=32){
-		ctx.fillRect(0, y, canvas.width, 1);
+		ctx.fillRect(grid_start.x+0, grid_start.y+y, canvas.width, 1);
 	}
-	*/
-	var offset={x: -hero.x+canvas.width/2, y: -hero.y+canvas.height/2};
+
+
 	if (heroReady) {
 		ctx.drawImage(heroImage, hero.x+offset.x, hero.y+offset.y);
 	}
