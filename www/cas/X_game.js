@@ -87,15 +87,10 @@ var render = function () {
 
 // Update game objects
 var update = function (delta) {
-	if(released){
-		released=false;
-		console.log(press_x+":"+press_y);
-		console.log(release_x+":"+release_y);
-	}
 	level=Math.floor(hero.score/10.0);
 	game_speed=1+level/10.0;
 	var modifier=delta*game_speed;
-	if (pressed) {
+	/*if (pressed) {
 		var new_y = hero.y-hero.speed * modifier;
 		if(new_y>=0){
 			hero.y = new_y;
@@ -104,6 +99,24 @@ var update = function (delta) {
 		}
 		hero.x=mouse_x;
 		hero.y=mouse_y;
+	}*/
+
+	
+	if(released){
+		hero.destination={mouse_x, mouse_y};
+		released=false;
+	}
+	var dir_x=hero.destination.x-hero.x;
+	var dir_y=hero.destination.y-hero.y;
+	var distance=Math.sqrt(dir_x*dir_x + dir_y*dir_y);
+	dir_x/=distance;
+	dir_y/=distance;
+	var new_x = hero.y-hero.speed * modifier*dir_x;
+	var new_y = hero.y-hero.speed * modifier*dir_y;
+	if(new_y>=0){
+		hero.y = new_y;
+	} else {
+		hero.y = 0;
 	}
 
 
