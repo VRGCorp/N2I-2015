@@ -8,13 +8,8 @@ function loadSprite(src, callback){
 	return sprite;
 }
 
-function reset_object(object) {
-	object.x = 0;
-	object.y = 0;
-	object.destination={x: 0, y: 0};
-};
 
-function center_object(object) {
+function reset_user(object) {
 	object.x = world.width / 2;
 	object.y = world.height / 2;
 	object.destination={x: object.x, y: object.y};
@@ -55,10 +50,18 @@ var render = function () {
 	ctx.fillRect(offset.x+user.destination.x+user.width/2-3, offset.y+user.destination.y+user.height/2-3, 7, 7);
 	//drawGrid(offset);
 
-	ctx.drawImage(userImage, user.x+offset.x, user.y+offset.y);
-	ctx.drawImage(monsterImage, monster.x+offset.x, monster.y+offset.y);
-	ctx.drawImage(lifeImage, life.x+offset.x, life.y+offset.y);
-	ctx.drawImage(starImage, star.x+offset.x, star.y+offset.y);
+	ctx.drawImage(user.img, user.x+offset.x, user.y+offset.y);
+
+	for(var i; i<humansToRescue.len(); i++){
+		if (humansToRescue[i].enabled) {
+			ctx.drawImage(humansToRescue[i].img, humansToRescue[i].x+offset.x, humansToRescue[i].y+offset.y);
+		}
+	}
+	for(var i; i<dangers.len(); i++){
+		if (dangers[i].enabled) {
+			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
+		}
+	}
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
@@ -123,38 +126,16 @@ var update = function (delta) {
 			user.x = world.width-user.width;
 		}
 	}
-
-
-	monster.x-=monster.speed*modifier;
-	life.x-=life.speed*modifier;
-	star.x-=life.speed*modifier;
-
-	if(monster.x<0){
-		reset_object(monster);
+	for(var i; i<humansToRescue.len(); i++){
+		if (humansToRescue[i].enabled && check_intersection(user, humansToRescue[i])) {
+			user.score++;
+			humansToRescue[i].enabled=false;
+		}
 	}
-	if(life.x<0){
-		reset_object(life);
-		life.x+=canvas.width*2;
-	}
-	if(star.x<0){
-		reset_object(star);
-		star.x+=canvas.width;
-	}
-
-	// Are they touching?
-	if (check_intersection(user, monster)) {
-		user.life--;
-		reset_object(monster);
-	}
-	if (check_intersection(user, life)) {
-		user.life++;
-		reset_object(life);
-		life.x+=canvas.width*2;
-	}
-	if (check_intersection(user, star)) {
-		user.score++;
-		reset_object(star);
-		star.x+=canvas.width;
+	for(var i; i<dangers.len(); i++){
+		if (dangers[i].enabled && check_intersection(user, dangers[i])) {
+			reset_user(user);
+		}
 	}
 };
 
@@ -200,21 +181,18 @@ var bgReady = false;
 var bgImage = loadSprite("images/map_cas_1.png", function(){bgReady = true;});
 
 
-// user image
 var userReady = false;
 var userImage = loadSprite("images/perso1.png", function(){userReady = true;});
 
+var humanAReady = false;
+var humanAImage = loadSprite("images/perso2.png", function(){humanAReady = true;});
+var humanBReady = false;
+var humanBImage = loadSprite("images/perso3.png", function(){humanBReady = true;});
+
 // Monster image
-var monsterReady = false;
-var monsterImage = loadSprite("images/monster.png", function(){monsterReady = true;});
+var fumeeReady = false;
+var fumeeImage = loadSprite("images/monster.png", function(){fumeeReady = true;});
 
-// Life image
-var lifeReady = false;
-var lifeImage = loadSprite("images/life.png", function(){lifeReady = true;});
-
-// Star image
-var starReady = false;
-var starImage = loadSprite("images/star.png", function(){starReady = true;});
 
 // Game objects
 var world = {
@@ -224,36 +202,38 @@ var world = {
 	height: 384*3
 };
 var user = {
-	life: 10,
-	score: 0,
 	x: 0,
 	y: 0,
+	width: 32,
+	height: 32,
+	img: userImage,
 	destination: {x: 0, y: 0},
-	width: 32,
-	height: 32,
-	speed: 128 // movement in pixels per second
+	speed: 128,
+	score: 0
 };
-var monster = {
-	x: 0,
-	y: 0,
-	width: 32,
-	height: 32,
-	speed: 128 // movement in pixels per second
-};
-var life = {
-	x: 0,
-	y: 0,
-	width: 32,
-	height: 32,
-	speed: 64 // movement in pixels per second
-};
-var star = {
-	x: 0,
-	y: 0,
-	width: 32,
-	height: 32,
-	speed: 64 // movement in pixels per second
-};
+
+var humansToRescue = [];
+for(var n=0; n<4; n++){
+	humansToRescue[n]={
+		x: Math.random()*world.width,
+		y: Math.random()*world.height,
+		width: 32,
+		height: 32,
+		img: Math.random()<.5 ? humanAImage :humanBImage,
+		enabled: true
+	}
+}
+var dangers = [];
+for(var n=0; n<4; n++){
+	dangers[n]={
+		x: Math.random()*world.width,
+		y: Math.random()*world.height,
+		width: 32,
+		height: 32,
+		img: fumeeImage,
+		enabled: true
+	}
+}
 
 // Handle keyboard input
 var keysDown = {};
