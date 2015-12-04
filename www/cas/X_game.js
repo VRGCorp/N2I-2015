@@ -95,7 +95,6 @@ var render = function () {
 
 // Update game objects
 var update = function (delta) {
-	console.log(hero.destination);
 	level=Math.floor(hero.score/10.0);
 	game_speed=1+level/10.0;
 	var modifier=delta*game_speed;
@@ -103,7 +102,7 @@ var update = function (delta) {
 
 	if(pressed){
 		hero.destination={x: hero.x-canvas.width/2 + mouse_x-hero.width/2, y: hero.y-canvas.height/2 + mouse_y-hero.height/2};
-		console.log(hero.destination);
+		//console.log(hero.destination);
 		released=false;
 	}
 	var dir_x=hero.destination.x-hero.x;
