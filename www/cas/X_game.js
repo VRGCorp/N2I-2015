@@ -46,7 +46,7 @@ var render = function () {
 		ctx.fillRect(0, y, canvas.width, 1);
 	}
 	*/
-	var offset={x: -hero.x+width/2, y: -hero.y+height/2};
+	var offset={x: -hero.x+canvas.width/2, y: -hero.y+canvas.height/2};
 	if (heroReady) {
 		ctx.drawImage(heroImage, hero.x+offset.x, hero.y+offset.y);
 	}
