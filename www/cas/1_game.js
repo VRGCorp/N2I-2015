@@ -130,7 +130,7 @@ var update = function (delta) {
 			humansToRescue[i].enabled=false;
 		}
 	}
-	for(var i; i<dangers.length; i++){
+	for(var i; i<100; i++){
 		if (dangers[i].enabled && check_intersection(user, dangers[i])) {
 			reset_user(user);
 		}
