@@ -50,7 +50,7 @@ var render = function () {
 
 
 	if (bgReady) {
-		ctx.drawImage(bgImage, world.x+offset.x, world.y+offset.y);
+		ctx.drawImage(bgImage, world.x+offset.x, world.y+offset.y, world.width, world.height);
 	}
 
 	if (heroReady) {
@@ -224,8 +224,8 @@ var starImage = loadSprite("images/star.png", function(){starReady = true;});
 var world = {
 	x: 0,
 	y: 0,
-	width: 640,
-	height: 384
+	width: 640*2,
+	height: 384*2
 };
 var hero = {
 	life: 10,
