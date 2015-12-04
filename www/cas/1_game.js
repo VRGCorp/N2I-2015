@@ -214,7 +214,7 @@ var user = {
 	height: 32,
 	img: userImage,
 	destination: {x: 0, y: 0},
-	speed: 256,
+	speed: 192,
 	score: 0
 };
 
