@@ -344,8 +344,8 @@ function onPan(ev) {
 
 mc.on("panstart panmove", onPan);
 function onTap(ev) {
-	var x= ev.deltaX;
-	var y= ev.deltaY;
+	var x= ev.gesture.center.pageX;
+	var y= ev.gesture.center.pageY;
 	console.log("tap:"+x+":"+y);
 }
 
