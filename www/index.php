@@ -2,14 +2,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 ?>
-<?php
-	exec("cd ../git; git pull; cd ..; rm -rf ./www/*; cp -r ./git/www/* ./www/; cd www");
-?>
 
-<?php
-	include('vars.php');
-	include($ROOT.'/passwords.php');
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -24,7 +17,7 @@
 		<h2 class="h1like">Réagir en situation d'urgence</h2>
 		<h2>Créé par la VRGCorp&nbsp;-&nbsp;Los burritos locos</h2>
 		<p>
-			Si tu as entre 6 et 10 ans, ce site est fait pour toi&nbsp;! Réalisé par des étudiants en informatique, il te 
+			Si tu as entre 6 et 10 ans, ce site est fait pour toi&nbsp;! Réalisé par des étudiants en informatique, il te
 			permettra d'en savoir plus sur comment te comporter en situation d'urgence. Différents cas de danger te seront expliqués, puis
 			un mini-jeu te mettant en situation te permettra de t'entraîner virtuellement à te sauver.
 		</p>
