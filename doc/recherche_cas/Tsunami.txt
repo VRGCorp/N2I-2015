@@ -4,3 +4,7 @@ Vikidia, les ras-de-marée : https://fr.vikidia.org/w/index.php?title=Raz-de-mar%
 Wikihow, survivre à un tsunami : http://fr.wikihow.com/survivre-%C3%A0-un-tsunami
 
 Jeu :
+Un timer indique dans combien de temps arrive la prochaine vague. Le joueur doit se mettre en hauteur (arbre, colline,...)
+et quand le vague passe son abrit et détruit et il doit en trouver un autre.
+Le temps entre les vagues dimunu à chaque fois.
+Les points correspondent au nombre de vague passées.
