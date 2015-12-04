@@ -134,11 +134,13 @@ var update = function (delta) {
 		if(user.score==humansToRescue.length){
 			window.alert("Bravo, vous avez réagi correctement à la situation d'urgence !");
 			pressed=false;
-			user.x=rassemblement.x-user.width*1.1;
+			user.x=rassemblement.x-user.width*1.5;
+			user.destination.x=user.x;
 		} else {
 			window.alert("Il reste des personnes piégés dans le batiment !");
 			pressed=false;
-			user.x=rassemblement.x-user.width*1.1;
+			user.x=rassemblement.x-user.width*1.5;
+			user.destination.x=user.x;
 		}
 	}
 };
@@ -261,11 +263,23 @@ for(var n=0; n<30; n++){
 	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
-		width: 16+32*Math.random(),
-		height: 16+32*Math.random(),
+		width: 32+128*Math.random(),
+		height: 32+128*Math.random(),
 		img: fumeeImage,
 		enabled: true
 	});
+	var error=true;
+	while(error){
+		error=false;
+		for(var i=0; i<humansToRescue.length; i++){
+			if(check_intersection(dangers[n], humansToRescue[i])){
+				error=true;
+				dangers[n].x= Math.random()*world.width;
+				dangers[n].y= Math.random()*world.height;
+			}
+		}
+
+	}
 }
 
 // Handle keyboard input
