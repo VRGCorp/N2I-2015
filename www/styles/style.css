@@ -156,7 +156,8 @@ h1, h2.h1like {
 }
 
 h2.h1like {
-	margin-bottom: 15px;
+	margin-bottom: 45px;
+	text-align: center;
 }
 
 section {
@@ -172,6 +173,10 @@ section {
 section * {
 	margin-top: 0;
 	margin-bottom: 0;
+}
+
+section h2 {
+	margin-bottom: 45px;
 }
 
 section article {
