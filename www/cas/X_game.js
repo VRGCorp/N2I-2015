@@ -163,14 +163,13 @@ var main = function () {
 
 // Create the canvas
 var canvas = document.createElement("canvas");
-var ctx = canvas.getContext("2d");
 canvas.id = 'game-canvas-'+case_id;
 canvas.width = 768;
 canvas.height = 256;
 document.getElementById('game-wrapper-'+case_id).appendChild(canvas);
 
-var canvas_bounds = canvas.getBoundingClientRect();
-
+var ctx = canvas.getContext("2d");
+var canvas_offset=$(canvas).offset();
 
 
 
@@ -254,26 +253,21 @@ var release_y = 0;
 
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
 function pointer_pos(canvas, event, tactile){
-
-	if (event.x != undefined && event.y != undefined && !tactile){
-		x = event.x;
-		y = event.y;
-	}
-	else{
-		if(tactile){
-			window.alert(x);
-			window.alert(y);
-		}
-		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
-		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-
-    }
-    x -= canvas.offsetLeft;
-    y -= canvas.offsetTop;
-	
 	if(tactile){
+		x=event.pageX - offset.left
+		y=event.pageY - offset.top;
 		window.alert(x);
 		window.alert(y);
+	}else{
+		if (event.x != undefined && event.y != undefined){
+			x = event.x;
+			y = event.y;
+		}else{
+			x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+			y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+	        }
+	        x -= canvas.offsetLeft;
+	        y -= canvas.offsetTop;
 	}
 	return {x: x, y: y};
 }
