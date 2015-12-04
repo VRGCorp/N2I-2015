@@ -40,7 +40,7 @@ var render = function () {
 	var offset={x: -hero.x+canvas.width/2, y: -hero.y+canvas.height/2};
 
 
-	var grid_start={x: Math.floor((hero.x-canvas.width/2)/32)*32, y: Math.floor((hero.y-canvas.height/2)/32)*32};
+	var grid_start={x: Math.floor(Math.max(0, hero.x-canvas.width/2)/32)*32, y: Math.floor(Math.max(0, hero.y-canvas.height/2)/32)*32};
 	grid_start.x+=offset.x;
 	grid_start.y+=offset.y;
 	ctx.fillStyle = "rgb(64, 64, 64)";
