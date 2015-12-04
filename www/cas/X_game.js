@@ -108,14 +108,18 @@ var update = function (delta) {
 
 		if(new_y>=0 && new_y< canvas.height-hero.height){
 			hero.y = new_y;
-		} else {
+		} else if(new_y<0) {
 			hero.y = 0;
+		} else {
+			hero.y = canvas.height-hero.height;
 		}
 
 		if(new_x>=0 && new_x< canvas.width-hero.width){
 			hero.x = new_x;
-		} else {
+		} else if(new_x<0) {
 			hero.x = 0;
+		} else {
+			hero.x = canvas.width-hero.width;
 		}
 	}
 
