@@ -43,7 +43,7 @@ var render = function () {
 	if (bgReady) {
 		ctx.drawImage(bgImage, world.x+offset.x, world.y+offset.y, world.width, world.height);
 	}
-
+	/*
 	ctx.fillStyle = "rgb(64, 64, 64)";
 	for(x=0; x<=world.width+32; x+=32){
 		ctx.fillRect(offset.x+x, offset.y+0, 1, world.height);
@@ -51,7 +51,7 @@ var render = function () {
 	for(y=0; y<=world.height+32; y+=32){
 		ctx.fillRect(offset.x+0, offset.y+y, world.width, 1);
 	}
-
+	*/
 
 
 	if (heroReady) {
@@ -207,7 +207,7 @@ var bgImage = loadSprite("images/map_cas_4.png", function(){bgReady = true;});
 
 // Hero image
 var heroReady = false;
-var heroImage = loadSprite("images/hero.png", function(){heroReady = true;});
+var heroImage = loadSprite("images/perso1.png", function(){heroReady = true;});
 
 // Monster image
 var monsterReady = false;
