@@ -100,14 +100,14 @@ var update = function (delta) {
 
 
 	if(released){
-		hero.destination={x: mouse_x-hero.width/2, y: mouse_y-hero.height/2};
+		hero.destination={x: hero.x-canvas.width/2 + mouse_x-hero.width/2, y: hero.y-canvas.height/2 + mouse_y-hero.height/2};
 		console.log(hero.destination);
 		released=false;
 	}
 	var dir_x=hero.destination.x-hero.x;
 	var dir_y=hero.destination.y-hero.y;
 	var distance=Math.sqrt(dir_x*dir_x + dir_y*dir_y);
-	if(distance>=hero.width/8){
+	if(distance>=hero.width/8.){
 		dir_x/=distance;
 		dir_y/=distance;
 		var new_x = hero.x+hero.speed * modifier*dir_x;
