@@ -11,13 +11,13 @@ function loadSprite(src, callback){
 function reset_object(object) {
 	object.x = 0;
 	object.y = 0;
-	object.direction={x: 0, y: 0};
+	object.destination={x: 0, y: 0};
 };
 
 function center_object(object) {
 	object.x = world.width / 2;
 	object.y = world.height / 2;
-	object.direction={x: object.x, y: object.y};
+	object.destination={x: object.x, y: object.y};
 };
 
 
@@ -95,7 +95,7 @@ var render = function () {
 
 // Update game objects
 var update = function (delta) {
-	console.log(hero.direction);
+	console.log(hero.destination);
 	level=Math.floor(hero.score/10.0);
 	game_speed=1+level/10.0;
 	var modifier=delta*game_speed;
