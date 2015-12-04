@@ -196,8 +196,8 @@ var fumeeImage = loadSprite("images/Fumee1.png", function(){fumeeReady = true;})
 var world = {
 	x: 0,
 	y: 0,
-	width: 640*3/6,
-	height: 384*3/6
+	width: 640*3,
+	height: 384*3
 };
 var user = {
 	x: 0,
