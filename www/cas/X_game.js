@@ -47,6 +47,10 @@ var render = function () {
 	}
 
 
+	if (bgReady) {
+		ctx.drawImage(bgImage, world.x+offset.x, world.y+offset.y);
+	}
+
 	if (heroReady) {
 		ctx.drawImage(heroImage, hero.x+offset.x, hero.y+offset.y);
 	}
@@ -195,7 +199,7 @@ var canvas_offset=$(canvas).offset();
 
 // Background image
 var bgReady = false;
-var bgImage = loadSprite("images/background.png", function(){bgReady = true;});
+var bgImage = loadSprite("images/map_cas_4.png", function(){bgReady = true;});
 
 
 // Hero image
