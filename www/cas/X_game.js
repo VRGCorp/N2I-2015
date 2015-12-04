@@ -284,13 +284,13 @@ var release_y = 0;
 
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
 function pointer_pos(canvas, event){
-	if (event.x != undefined && event.y != undefined){
+	/*if (event.x != undefined && event.y != undefined){
 		x = event.clientX;
 		y = event.clientY;
-	}else{
+	}else{*/
 		x = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
 		y = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
-        }
+        //}
         x -= canvas.offsetLeft;
         y -= canvas.offsetTop;
 	return {x: x, y: y};
