@@ -62,7 +62,7 @@
 				include($reaction_file);
 				echo '</article>';
 
-				echo '<article>';
+				echo '<article class="game-wrapper">';
 				include($jeu_file);
 				echo '</article>';
 
