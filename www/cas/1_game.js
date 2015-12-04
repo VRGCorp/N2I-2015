@@ -267,8 +267,8 @@ for(var n=0; n<30; n++){
 	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
-		width: 32+128*Math.random(),
-		height: 32+128*Math.random(),
+		width: 32+64*Math.random(),
+		height: 32+64*Math.random(),
 		img: fumeeImage,
 		enabled: true
 	});
@@ -285,6 +285,13 @@ for(var n=0; n<30; n++){
 			}
 		}
 		if(check_intersection(dangers[n], user)){
+			error=true;
+			dangers[n].x= Math.random()*world.width;
+			dangers[n].y= Math.random()*world.height;
+			dangers[n].width--;
+			dangers[n].height--;
+		}
+		if(check_intersection(dangers[n], rassemblement)){
 			error=true;
 			dangers[n].x= Math.random()*world.width;
 			dangers[n].y= Math.random()*world.height;
