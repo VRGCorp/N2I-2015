@@ -150,3 +150,9 @@ section h2 {
 section article.game-wrapper > div {
   text-align: center;
 }
+
+#mini_logo {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
