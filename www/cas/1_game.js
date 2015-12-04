@@ -71,7 +71,7 @@ var render = function () {
 	}else {
 		ctx.fillStyle = "rgb(192, 255, 192)";
 	}
-	
+
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
@@ -145,6 +145,7 @@ var update = function (delta) {
 			pressed=false;
 			user.x=rassemblement.x-user.width*1.5;
 			user.destination.x=user.x;
+			user.destination.y=user.y;
 		} else {
 			window.alert("Il reste des personnes piégés dans le batiment !");
 			pressed=false;
@@ -284,12 +285,16 @@ for(var n=0; n<30; n++){
 				error=true;
 				dangers[n].x= Math.random()*world.width;
 				dangers[n].y= Math.random()*world.height;
+				dangers[n].width--;
+				dangers[n].height--;
 			}
 		}
 		if(check_intersection(dangers[n], user)){
 			error=true;
 			dangers[n].x= Math.random()*world.width;
 			dangers[n].y= Math.random()*world.height;
+			dangers[n].width--;
+			dangers[n].height--;
 		}
 
 	}
