@@ -14,6 +14,7 @@
 	<meta charset="utf-8">
 	<title>Titre de la page</title>
 	<link rel="stylesheet" href="styles/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
 	<header>
@@ -22,7 +23,7 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/test_tactile/test.html">item 1</a> 
+				<a href="/test_tactile/test.html">item 1</a>
 			</li>
 			<li>
 				item 2
