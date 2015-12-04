@@ -67,25 +67,15 @@ var render = function () {
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Life: " + user.life, 8, 24*0+8*1);
+	ctx.fillText("Objectif : sauver les personnes dans le batiment", 8, 24*0+8*1);
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Score: " + user.score, 8, 24*1+8*2);
+	ctx.fillText("Personnes sauvées: " + user.score+"/"+humansToRescue.length, 8, 24*1+8*2);
 
-	ctx.fillStyle = "rgb(250, 250, 250)";
-	ctx.font = "24px Helvetica";
-	ctx.textAlign = "left";
-	ctx.textBaseline = "top";
-	ctx.fillText("Level: " +level, 8, 24*2+8*3);
 
-	ctx.fillStyle = "rgb(250, 250, 250)";
-	ctx.font = "24px Helvetica";
-	ctx.textAlign = "left";
-	ctx.textBaseline = "top";
-	ctx.fillText("Game speed: " +game_speed, 8, 24*3+8*4);
 };
 
 
