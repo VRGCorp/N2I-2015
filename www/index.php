@@ -22,7 +22,7 @@
 	<nav>
 		<ul>
 			<li>
-				item 1
+				<a href="test_tactile/text.html">item 1</a>
 			</li>
 			<li>
 				item 2
