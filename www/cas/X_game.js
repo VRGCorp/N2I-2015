@@ -37,7 +37,7 @@ function check_intersection(object_a, object_b){
 var render = function () {
 	ctx.fillStyle = "rgb(0, 0, 0)";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
-
+	/*
 	ctx.fillStyle = "rgb(64, 64, 64)";
 	for(x=0; x<=canvas.width; x+=32){
 		ctx.fillRect(x, 0, 1, canvas.height);
@@ -45,18 +45,20 @@ var render = function () {
 	for(y=0; y<=canvas.height; y+=32){
 		ctx.fillRect(0, y, canvas.width, 1);
 	}
+	*/
+	var offset={x: -hero.x+width/2, y: -hero.y+height/2};
 	if (heroReady) {
-		ctx.drawImage(heroImage, hero.x, hero.y);
+		ctx.drawImage(heroImage, hero.x+offset.x, hero.y+offset.y);
 	}
 
 	if (monsterReady) {
-		ctx.drawImage(monsterImage, monster.x, monster.y);
+		ctx.drawImage(monsterImage, monster.x+offset.x, monster.y+offset.y);
 	}
 	if (lifeReady) {
-		ctx.drawImage(lifeImage, life.x, life.y);
+		ctx.drawImage(lifeImage, life.x+offset.x, life.y+offset.y);
 	}
 	if (starReady) {
-		ctx.drawImage(starImage, star.x, star.y);
+		ctx.drawImage(starImage, star.x+offset.x, star.y+offset.y);
 	}
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
