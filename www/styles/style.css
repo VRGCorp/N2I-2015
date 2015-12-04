@@ -108,13 +108,11 @@ section.jeu_marron {
 }
 
 section.jeu_marron > div {
-	width: 100%;
-	height: 100%;
 	background: rgba(0, 0, 0, 0) url('img/bcg_jeu_marron.png') center repeat;
 }
 
 section.jeu_bleu > div {
-	background: rgba(0, 0, 0, 0) url('images/bcg_jeu_bleu.png') center repeat;
+	background: rgba(0, 0, 0, 0) url('img/bcg_jeu_bleu.png') center repeat;
 }
 
 section.jeu_vert {
