@@ -203,8 +203,8 @@ var user = {
 
 
 var rassemblement = {
-	x: 275,
-	y: 140,
+	x: 1802,
+	y: 365,
 	width: 64,
 	height: 150
 };
