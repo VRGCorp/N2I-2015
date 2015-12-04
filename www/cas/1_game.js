@@ -133,9 +133,11 @@ var update = function (delta) {
 	if (check_intersection(user, rassemblement)) {
 		if(user.score==humansToRescue.length){
 			window.alert("Bravo, vous avez réagi correctement à la situation d'urgence !");
+			pressed=false;
 			user.x=rassemblement.x-user.width*1.1;
 		} else {
 			window.alert("Il reste des personnes piégés dans le batiment !");
+			pressed=false;
 			user.x=rassemblement.x-user.width*1.1;
 		}
 	}
@@ -259,8 +261,8 @@ for(var n=0; n<30; n++){
 	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
-		width: 32+128*Math.random(),
-		height: 32+128*Math.random(),
+		width: 16+32*Math.random(),
+		height: 16+32*Math.random(),
 		img: fumeeImage,
 		enabled: true
 	});
