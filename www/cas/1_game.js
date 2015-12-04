@@ -54,7 +54,8 @@ var render = function () {
 			ctx.drawImage(humansToRescue[i].img, humansToRescue[i].x+offset.x, humansToRescue[i].y+offset.y);
 		}
 	}
-	for(var i; i<100; i++){
+	console.log(dangers.length);
+	for(var i; i<dangers.length; i++){
 		console.log(dangers[i].x+":"+dangers[i].y+":"+dangers[i].enabled);
 		if (dangers[i].enabled) {
 			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
