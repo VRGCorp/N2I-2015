@@ -129,6 +129,14 @@ h1, h2, h3, h4, h5, h1 *, h-n * {
 	font-family: groboldregular;
 }
 
+p {
+	text-align: justify;
+}
+
+p:first-letter {
+	margin-left: 10px;
+}
+
 header {
 	width: 60%;
 	height: 90%;
@@ -143,8 +151,12 @@ header h1 {
 	text-align: center;
 }
 
-h1, section h2 {
+h1, h2.h1like {
 	animation: animLogo 10s linear 5s infinite;
+}
+
+h2.h1like {
+	margin-bottom: 15px;
 }
 
 section {
@@ -163,7 +175,6 @@ section * {
 }
 
 section article {
-	text-align: justify;
 	padding-bottom: 5%
 }
 
@@ -229,6 +240,11 @@ section.jeu_vert > div {
 
 section h2 {
 	text-align: center;
+	margin-bottom: 25px;
+}
+
+section h3 {
+	margin-bottom: 15px;
 }
 
 section article.game-wrapper > div {
