@@ -55,8 +55,8 @@ var render = function () {
 		}
 	}
 	for(var i; i<dangers.length; i++){
+		console.log(dangers[i].x+":"+dangers[i].y+":"+dangers[i].enabled);
 		if (dangers[i].enabled) {
-			console.log(dangers[i].x+":"+dangers[i].y);
 			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
 		}
 	}
