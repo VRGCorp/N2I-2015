@@ -1,4 +1,4 @@
-Un tsunami est une catastrophe naturelle pendant laquelle une grande vague recouvre brusquement la côte.
-La vitesse et le poids de la grande vague provoque beaucoup de dégâts et peut même détruire des bâtiments et emporter des véhicules.
+ï»¿Un tsunami est une catastrophe naturelle pendant laquelle une grande vague recouvre brusquement la cÃ´te.
+La vitesse et le poids de la grande vague provoque beaucoup de dÃ©gÃ¢ts et peut mÃªme dÃ©truire des bÃ¢timents et emporter des vÃ©hicules.
 
-Les tsunamis sont causés par des éruptions ou des séismes sous-marins de grande importance.
+Les tsunamis sont causÃ©s par des Ã©ruptions ou des sÃ©ismes sous-marins de grande importance.

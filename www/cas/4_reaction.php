@@ -1,5 +1,5 @@
-Si le niveau de l'eau baisse rapidement il y a de fortes chances qu'un tsunami approche de la côte.
+ï»¿Si le niveau de l'eau baisse rapidement il y a de fortes chances qu'un tsunami approche de la cÃ´te.
 
-Pour s'en protéger, il faut s'éloigner des zones proches de l'eau et prendre de la hauteur en grimpant dans un arbre ou sur une coline par exemple.
+Pour s'en protÃ©ger, il faut s'Ã©loigner des zones proches de l'eau et prendre de la hauteur en grimpant dans un arbre ou sur une coline par exemple.
 
-Emporté par le courant, il est important de s'accrocher à un objet flottant pour rester à la surface.
+EmportÃ© par le courant, il est important de s'accrocher Ã  un objet flottant pour rester Ã  la surface.
