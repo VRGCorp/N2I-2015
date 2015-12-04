@@ -113,20 +113,20 @@ var update = function (delta) {
 		var new_x = hero.x+hero.speed * modifier*dir_x;
 		var new_y = hero.y+hero.speed * modifier*dir_y;
 
-		if(new_y>=0 && new_y< canvas.height-hero.height){
+		if(new_y>=0 && new_y< world.height-hero.height){
 			hero.y = new_y;
 		} else if(new_y<0) {
 			hero.y = 0;
 		} else {
-			hero.y = canvas.height-hero.height;
+			hero.y = world.height-hero.height;
 		}
 
-		if(new_x>=0 && new_x< canvas.width-hero.width){
+		if(new_x>=0 && new_x< world.width-hero.width){
 			hero.x = new_x;
 		} else if(new_x<0) {
 			hero.x = 0;
 		} else {
-			hero.x = canvas.width-hero.width;
+			hero.x = world.width-hero.width;
 		}
 	}
 
@@ -194,8 +194,8 @@ var main = function () {
 // Create the canvas
 var canvas = document.createElement("canvas");
 canvas.id = 'game-canvas-'+case_id;
-canvas.width = 768;
-canvas.height = 256;
+canvas.width = 540;
+canvas.height = 540;
 document.getElementById('game-wrapper-'+case_id).appendChild(canvas);
 
 var ctx = canvas.getContext("2d");
