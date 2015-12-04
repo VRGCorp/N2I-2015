@@ -110,14 +110,6 @@ section > div {
 	padding: 5%;
 }
 
-section.jeu_marron > div {
-	background: rgba(0, 0, 0, 0) url('img/bcg_jeu_marron.png') center repeat;
-}
-
-section.jeu_bleu > div {
-	background: rgba(0, 0, 0, 0) url('img/bcg_jeu_bleu.png') center repeat;
-}
-
 section.jeu_vert {
 	background-color: rgb(180, 180, 180);
 	background-image: linear-gradient(30deg, rgb(120, 164, 25) 10%, rgb(29,112,45) 110%);
@@ -136,6 +128,22 @@ section.jeu_jaune {
 	background-image: linear-gradient(30deg, rgb(253, 209, 49) 10%, rgb(233,189,29) 110%);
 	color: white;
 	text-shadow: 0 0 5px black;
+}
+
+section.jeu_marron > div {
+	background: rgba(0, 0, 0, 0) url('img/bcg_jeu_marron.png') center repeat;
+}
+
+section.jeu_orange > div {
+	background: rgba(0, 0, 0, 0) url('img/bcg_jeu_orange.png') center repeat;
+}
+
+section.jeu_bleu > div {
+	background: rgba(0, 0, 0, 0) url('img/bcg_jeu_bleu.png') center repeat;
+}
+
+section.jeu_vert > div {
+	background: rgba(0, 0, 0, 0) url('img/bcg_jeu_vert.png') center repeat;
 }
 
 section h2 {
