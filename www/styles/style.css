@@ -80,27 +80,27 @@ section * {
 }
 
 section.jeu_bleu {
-	background-color: rgb(180, 180, 180);
+	background-color: #5DC6DB;
 	background-image: linear-gradient(30deg, rgb(73, 92, 255) 10%, rgb(24,49,82) 110%);
 	color: white;
 	text-shadow: 0 0 5px black;
 }
 
 section.jeu_marron {
-	background-color: rgb(180, 180, 180);
+	background-color: #F9E1A2;
 	background-image: linear-gradient(30deg, rgb(79, 24, 25) 10%, rgb(87,9,6) 110%);
 	color: white;
 	text-shadow: 0 0 5px black;
 }
 
 section.jeu_vert {
-	background-color: rgb(180, 180, 180);
+	background-color: #33DB6A;
 	background-image: linear-gradient(30deg, rgb(120, 164, 25) 10%, rgb(29,112,45) 110%);
 	color: white;
 	text-shadow: 0 0 5px black;
 }
 section.jeu_orange {
-	background-color: rgb(180, 180, 180);
+	background-color: #FFB90F;
 	background-image: linear-gradient(30deg, rgb(184, 58, 27) 10%, rgb(255,89,0) 110%);
 	color: white;
 	text-shadow: 0 0 5px black;
