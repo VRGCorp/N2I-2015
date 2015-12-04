@@ -56,7 +56,7 @@ var render = function () {
 	}
 	for(var i=0; i<dangers.length; i++){
 		if (dangers[i].enabled) {
-			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
+			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y, dangers[i].width, dangers[i].height);
 		}
 	}
 	ctx.fillStyle = "rgba(128, 250, 128, .5)";
@@ -66,7 +66,11 @@ var render = function () {
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Objectif : sauver les personnes dans le batiment", 8, 24*0+8*1);
+	if(user.score==humansToRescue.length){
+		ctx.fillText("Vous avez sauvé tout le monde, dépéchez vous de sortir !", 8, 24*0+8*1);
+	} else {
+		ctx.fillText("Objectif : sauver les personnes dans le batiment.", 8, 24*0+8*1);
+	}
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
@@ -126,6 +130,13 @@ var update = function (delta) {
 			reset_user(user);
 		}
 	}
+	if (dangers[i].enabled && check_intersection(user, rassemblement)) {
+		if(user.score==humansToRescue.length){
+			window.alert("Bravo, vous avez réagi correctement à la situation d'urgence !");
+		} else {
+			window.alert("Il reste des personnes piégés dans le batiment !");
+		}
+	}
 };
 
 
@@ -140,7 +151,6 @@ var main = function () {
 
 	then = now;
 
-	// Request to do this again ASAP
 	requestAnimationFrame(main);
 };
 
@@ -203,8 +213,8 @@ var user = {
 
 
 var rassemblement = {
-	x: 1802,
-	y: 365,
+	x: 1800,
+	y: 370,
 	width: 64,
 	height: 150
 };
@@ -247,8 +257,8 @@ for(var n=0; n<30; n++){
 	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
-		width: 32+32*Math.random(),
-		height: 32+32*Math.random(),
+		width: 32+128*Math.random(),
+		height: 32+128*Math.random(),
 		img: fumeeImage,
 		enabled: true
 	});
