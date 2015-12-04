@@ -210,7 +210,7 @@ var user = {
 };
 
 var humansToRescue = [];
-for(var n=0; n<4; n++){
+for(var n=0; n<100; n++){
 	humansToRescue[n]={
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
@@ -221,7 +221,7 @@ for(var n=0; n<4; n++){
 	}
 }
 var dangers = [];
-for(var n=0; n<4; n++){
+for(var n=0; n<100; n++){
 	dangers[n]={
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
