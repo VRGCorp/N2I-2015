@@ -69,7 +69,6 @@ section {
 	background-image: linear-gradient(30deg, rgb(220, 220, 220) 10%, rgb(110,110,110) 110%), url('./styles/img/bcg_jeu_bleu.png');
 	background-attachment: fixed;
 	color: black;
-	padding: 5%;
 	border-top: 2px solid #EEE;
 	box-shadow: 0 0 10px #000 inset;
 }
@@ -108,10 +107,9 @@ section.jeu_marron {
 }
 
 section > div {
-	margin-top: -10%;
-	margin-left: -10%;
-	width: 120%;
-	height: 120%;
+	width: 100%;
+	height: 100%;
+	padding: 5%;
 }
 
 section.jeu_marron > div {
