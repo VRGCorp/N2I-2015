@@ -188,7 +188,7 @@ var humanBImage = loadSprite("images/perso3.png", function(){humanBReady = true;
 
 // Monster image
 var fumeeReady = false;
-var fumeeImage = loadSprite("images/monster.png", function(){fumeeReady = true;});
+var fumeeImage = loadSprite("images/Fumee1.png", function(){fumeeReady = true;});
 
 
 // Game objects
