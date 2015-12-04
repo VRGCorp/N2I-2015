@@ -41,11 +41,11 @@ var render = function () {
 
 
 	ctx.fillStyle = "rgb(64, 64, 64)";
-	for(x=0; x<=world.width+4*32; x+=32){
-		ctx.fillRect(offset.x+x, offset.y+0, 1, world.height+4*32);
+	for(x=0; x<=world.width+32; x+=32){
+		ctx.fillRect(offset.x+x, offset.y+0, 1, world.height);
 	}
-	for(y=0; y<=world.height+4*32; y+=32){
-		ctx.fillRect(offset.x+0, offset.y+y, world.width+4*32, 1);
+	for(y=0; y<=world.height+32; y+=32){
+		ctx.fillRect(offset.x+0, offset.y+y, world.width, 1);
 	}
 
 
