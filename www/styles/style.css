@@ -246,6 +246,11 @@ section article.game-wrapper > div {
 		margin: 0;
 		background: #EEE url('img/burrito.png') no-repeat right;
 	}
+
+	header h1, header h2 {
+		padding: 1%;
+	}
+
 	section > div {
 		width: 90%;
 		height: 90%;
