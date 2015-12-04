@@ -20,8 +20,15 @@
 </head>
 <body>
 	<header>
-		<h1>Los burritos locos</h1>
+		<h1>Réagir en situation d'urgence</h1>
+		<h2>Créé par la VRGCorp&nbsp;-&nbsp;Los burritos locos</h2>
+		<p>
+			Si tu as entre 6 et 10 ans, ce site est fait pour toi&nbsp;! Réalisé par des étudiants en informatique, il te 
+			permettra d'en savoir plus sur comment te comporter en situation d'urgence. Différents cas de danger te seront expliqués, puis
+			un mini-jeu te mettant en situation te permettra de t'entraîner virtuellement à te sauver.
+		</p>
 	</header>
+	<img src="styles/img/burritos" id="mini_logo" />
 
 	<?php
 		for($id=0; $id<10; $id++){
