@@ -101,7 +101,7 @@ var update = function (delta) {
 	var modifier=delta*game_speed;
 
 
-	if(released){
+	if(pressed){
 		hero.destination={x: hero.x-canvas.width/2 + mouse_x-hero.width/2, y: hero.y-canvas.height/2 + mouse_y-hero.height/2};
 		console.log(hero.destination);
 		released=false;
@@ -307,27 +307,20 @@ function mouse_move(e) {
 
 
 function mouse_press(e) {
-	if(press_count==0){
-		var pos=pointer_pos(canvas, e);
+	var pos=pointer_pos(canvas, e);
 
-		pressed = true;
-		released=false;
-		press_x = pos.x;
-		press_y = pos.y;
-	}
-	press_count++;
+	pressed = true;
+	mouse_x = pos.x;
+	mouse_y = pos.y;
 }
 
 function mouse_release(e) {
-	press_count--;
-	if(press_count==0){
-		var pos=pointer_pos(canvas, e);
+	var pos=pointer_pos(canvas, e);
 
-		pressed  = false;
-		released = true;
-		release_x= pos.x;
-		release_y= pos.y;
-	}
+	pressed  = false;
+	released = true;
+	release_x= pos.x;
+	release_y= pos.y;
 }
 function mouse_click(e) {
 	if(!pressed){
