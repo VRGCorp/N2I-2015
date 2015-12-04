@@ -212,32 +212,32 @@ var user = {
 
 var humansToRescue = [];
 humansToRescue.push({
-	x: world.width*1./4,
-	y: world.height*1./4,
+	x: world.width*1./5,
+	y: world.height*1./5,
 	width: 32,
 	height: 32,
 	img: humanAImage,
 	enabled: true
 });
 humansToRescue.push({
-	x: world.width*1./4,
-	y: world.height*3./4,
+	x: world.width*1./5,
+	y: world.height*3./5,
 	width: 32,
 	height: 32,
 	img: humanAImage,
 	enabled: true
 });
 humansToRescue.push({
-	x: world.width*3./4,
-	y: world.height*1./4,
+	x: world.width*3./5,
+	y: world.height*1./5,
 	width: 32,
 	height: 32,
 	img: humanAImage,
 	enabled: true
 });
 humansToRescue.push({
-	x: world.width*3./4,
-	y: world.height*3./4,
+	x: world.width*3./5,
+	y: world.height*3./5,
 	width: 32,
 	height: 32,
 	img: humanAImage,
