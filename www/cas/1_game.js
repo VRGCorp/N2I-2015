@@ -217,7 +217,7 @@ for(var n=0; n<100; n++){
 		y: Math.random()*world.height,
 		width: 32,
 		height: 32,
-		img: Math.random()<.5 ? humanAImage :humanBImage,
+		img: humanAImage,
 		enabled: true
 	});
 }
