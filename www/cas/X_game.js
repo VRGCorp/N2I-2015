@@ -257,8 +257,8 @@ function pointer_pos(canvas, event, tactile){
 	if(tactile){
 		x=event.pageX - canvas_offset.left;
 		y=event.pageY - canvas_offset.top;
-		window.alert(x);
-		window.alert(y);
+		window.alert((event.pageX - canvas_offset.left)+":"+(event.pageY - canvas_offset.top));
+		window.alert(x+":"+y);
 	}else{
 		if (event.x != undefined && event.y != undefined){
 			x = event.x;
