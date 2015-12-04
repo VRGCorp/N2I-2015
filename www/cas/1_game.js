@@ -66,7 +66,7 @@ var render = function () {
 	ctx.fillRect(0, 0, canvas.width, 80);
 
 
-	if(user.score==humansToRescue.length){
+	if(user.gagne){
 		ctx.fillStyle = "rgb(192, 255, 192)";
 	}else {
 		ctx.fillStyle = "rgb(255, 192, 192)";
@@ -75,12 +75,17 @@ var render = function () {
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	if(user.score==humansToRescue.length){
-		ctx.fillText("Vous avez sauvé tout le monde,", 8, 24*0+8*1);
-		ctx.fillText("Dépéchez vous de sortir !", 8, 24*1+8*2);
+	if(user.gagne){
+		ctx.fillText("Bravo, vous avez gagné!,", 8, 24*0+8*1);
+
 	} else {
-		ctx.fillText("Sauvez les personnes dans le batiment.", 8, 24*0+8*1);
-		ctx.fillText("Personnes sauvées: " + user.score+"/"+humansToRescue.length, 8, 24*1+8*2);
+		if(user.score==humansToRescue.length){
+			ctx.fillText("Vous avez sauvé tout le monde,", 8, 24*0+8*1);
+			ctx.fillText("Dépéchez vous de sortir !", 8, 24*1+8*2);
+		} else {
+			ctx.fillText("Sauvez les personnes dans le batiment.", 8, 24*0+8*1);
+			ctx.fillText("Personnes sauvées: " + user.score+"/"+humansToRescue.length, 8, 24*1+8*2);
+		}
 	}
 
 
@@ -133,19 +138,17 @@ var update = function (delta) {
 	}
 	for(var i=0; i<dangers.length; i++){
 		if (dangers[i].enabled && check_intersection(user, dangers[i])) {
-			window.alert("La fumée de l'incendie peut vous asphixier, évitez la :)");
 			reset_user(user);
 		}
 	}
 	if (check_intersection(user, rassemblement)) {
 		if(user.score==humansToRescue.length){
-			window.alert("Bravo, vous avez réagi correctement à la situation d'urgence !");
 			pressed=false;
 			user.x=rassemblement.x-user.width*1.5;
 			user.destination.x=user.x;
 			user.destination.y=user.y;
+			user.gagne=false;
 		} else {
-			window.alert("Il reste des personnes piégés dans le batiment !");
 			pressed=false;
 			reset_user(user);
 		}
@@ -221,7 +224,8 @@ var user = {
 	img: userImage,
 	destination: {x: 0, y: 0},
 	speed: 192,
-	score: 0
+	score: 0,
+	gagne: false
 };
 
 
