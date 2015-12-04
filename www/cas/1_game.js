@@ -54,7 +54,7 @@ var render = function () {
 			ctx.drawImage(humansToRescue[i].img, humansToRescue[i].x+offset.x, humansToRescue[i].y+offset.y);
 		}
 	}
-	for(var i; i<dangers.length; i++){
+	for(var i; i<100; i++){
 		console.log(dangers[i].x+":"+dangers[i].y+":"+dangers[i].enabled);
 		if (dangers[i].enabled) {
 			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
@@ -130,8 +130,7 @@ var update = function (delta) {
 			humansToRescue[i].enabled=false;
 		}
 	}
-	for(var i; i<100; i++){
-		console.log(dangers[i].x+":"+dangers[i].y+":"+dangers[i].enabled);
+	for(var i; i<dangers.length; i++){
 		if (dangers[i].enabled && check_intersection(user, dangers[i])) {
 			reset_user(user);
 		}
