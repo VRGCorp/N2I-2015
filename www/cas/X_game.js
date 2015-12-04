@@ -45,10 +45,10 @@ var render = function () {
 	grid_start.y+=offset.y;
 	ctx.fillStyle = "rgb(64, 64, 64)";
 	for(x=0; x<=canvas.width+4*32; x+=32){
-		ctx.fillRect(grid_start.x+x, grid_start.y+0, 1, canvas.height);
+		ctx.fillRect(grid_start.x+x, grid_start.y+0, 1, canvas.height+4*32);
 	}
 	for(y=0; y<=canvas.height+4*32; y+=32){
-		ctx.fillRect(grid_start.x+0, grid_start.y+y, canvas.width, 1);
+		ctx.fillRect(grid_start.x+0, grid_start.y+y, canvas.width+4*32, 1);
 	}
 
 
