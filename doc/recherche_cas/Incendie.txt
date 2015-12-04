@@ -7,3 +7,8 @@ Idées gameplay :
 -Trouver la sortie de secours
 -Rejoindre la zone de rassemblement
 -Sortir tout le monde du bâtiment
+
+Scénario : 
+Le joueur commence dans l'une des quatre pièces d'un bâtiment en feu où quatre personnes sont à secourir.
+Des fumées toxiques se sont répendues dans le bâtiment.
+L'objectif est de se rendre dans la zone de rassemblement après avoir trouvé les quatre personnes.

@@ -5,3 +5,8 @@ Idées gameplay :
 	- Eviter les nuages de gaz
 	- Calfeutrer les entrées d'air
 	- Appeler les secours
+
+Scénario :
+Le personnage commence la partie dans une pièce avec deux fenêtres, une porte et une climatisation.
+L'objectif est de calfeutrer les ouvertures vers l'extérieur en évitant l'air toxique.
+Une fois la pièce entièrement isolée la partie est gagnée.
