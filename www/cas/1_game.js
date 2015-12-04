@@ -130,11 +130,13 @@ var update = function (delta) {
 			reset_user(user);
 		}
 	}
-	if (dangers[i].enabled && check_intersection(user, rassemblement)) {
+	if (check_intersection(user, rassemblement)) {
 		if(user.score==humansToRescue.length){
 			window.alert("Bravo, vous avez réagi correctement à la situation d'urgence !");
+			user.x=rassemblement.x-user.width*1.1;
 		} else {
 			window.alert("Il reste des personnes piégés dans le batiment !");
+			user.x=rassemblement.x-user.width*1.1;
 		}
 	}
 };
