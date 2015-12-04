@@ -212,25 +212,25 @@ var user = {
 
 var humansToRescue = [];
 for(var n=0; n<100; n++){
-	humansToRescue[n]={
+	humansToRescue.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
 		width: 32,
 		height: 32,
 		img: Math.random()<.5 ? humanAImage :humanBImage,
 		enabled: true
-	}
+	});
 }
 var dangers = [];
 for(var n=0; n<100; n++){
-	dangers[n]={
+	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
 		width: 32,
 		height: 32,
 		img: fumeeImage,
 		enabled: true
-	}
+	});
 }
 
 // Handle keyboard input
