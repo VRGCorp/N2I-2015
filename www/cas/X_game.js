@@ -258,7 +258,7 @@ var release_x = 0;
 var release_y = 0;
 
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
-function pointer_pos(canvas, event_used){
+function pointer_pos(canvas, event){
 	if (event.x != undefined && event.y != undefined){
 		x = event.x;
 		y = event.y;
