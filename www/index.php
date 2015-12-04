@@ -42,9 +42,12 @@
 			$cas_file='cas/'.$id.'_cas.php';
 			$reaction_file='cas/'.$id.'_reaction.php';
 			$jeu_file='cas/'.$id.'_jeu.php';
+			$classes_file='cas/'.$id.'_classes.php';
 
 			if(file_exists($title_file)){
-				echo '<section>';
+				echo '<section classes="';
+				include($classes_file);
+				echo '">';
 
 				echo '<h2>';
 				include($title_file);
@@ -68,7 +71,7 @@
 		}
 
 	 ?>
-	
+
 	<footer>
 		<a href="https://www.facebook.com/VRGCorpLBL/">VRGCorp - Los Burritos Locos</a>
 	</footer>
