@@ -22,7 +22,7 @@ function center_object(object) {
 
 
 function reset() {
-	center_object(hero);
+	center_object(user);
 	reset_object(monster);
 	reset_object(life);
 	reset_object(star);
@@ -36,7 +36,7 @@ function check_intersection(object_a, object_b){
 var render = function () {
 	ctx.fillStyle = "rgb(0, 0, 0)";
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
-	var offset={x: -hero.x+canvas.width/2, y: -hero.y+canvas.height/2};
+	var offset={x: -user.x+canvas.width/2, y: -user.y+canvas.height/2};
 
 
 	if (bgReady) {
@@ -55,8 +55,8 @@ var render = function () {
 	*/
 
 
-	if (heroReady) {
-		ctx.drawImage(heroImage, hero.x+offset.x, hero.y+offset.y);
+	if (userReady) {
+		ctx.drawImage(userImage, user.x+offset.x, user.y+offset.y);
 	}
 
 	if (monsterReady) {
@@ -73,13 +73,13 @@ var render = function () {
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Life: " + hero.life, 8, 24*0+8*1);
+	ctx.fillText("Life: " + user.life, 8, 24*0+8*1);
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Score: " + hero.score, 8, 24*1+8*2);
+	ctx.fillText("Score: " + user.score, 8, 24*1+8*2);
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
@@ -97,39 +97,39 @@ var render = function () {
 
 // Update game objects
 var update = function (delta) {
-	level=Math.floor(hero.score/10.0);
+	level=Math.floor(user.score/10.0);
 	game_speed=1+level/10.0;
 	var modifier=delta*game_speed;
 
 
 	if(pressed){
-		hero.destination={x: hero.x-canvas.width/2 + mouse_x-hero.width/2, y: hero.y-canvas.height/2 + mouse_y-hero.height/2};
-		//console.log(hero.destination);
+		user.destination={x: user.x-canvas.width/2 + mouse_x-user.width/2, y: user.y-canvas.height/2 + mouse_y-user.height/2};
+		//console.log(user.destination);
 		released=false;
 	}
-	var dir_x=hero.destination.x-hero.x;
-	var dir_y=hero.destination.y-hero.y;
+	var dir_x=user.destination.x-user.x;
+	var dir_y=user.destination.y-user.y;
 	var distance=Math.sqrt(dir_x*dir_x + dir_y*dir_y);
-	if(distance>=hero.width/8.){
+	if(distance>=user.width/8.){
 		dir_x/=distance;
 		dir_y/=distance;
-		var new_x = hero.x+hero.speed * modifier*dir_x;
-		var new_y = hero.y+hero.speed * modifier*dir_y;
+		var new_x = user.x+user.speed * modifier*dir_x;
+		var new_y = user.y+user.speed * modifier*dir_y;
 
-		if(new_y>=0 && new_y< world.height-hero.height){
-			hero.y = new_y;
+		if(new_y>=0 && new_y< world.height-user.height){
+			user.y = new_y;
 		} else if(new_y<0) {
-			hero.y = 0;
+			user.y = 0;
 		} else {
-			hero.y = world.height-hero.height;
+			user.y = world.height-user.height;
 		}
 
-		if(new_x>=0 && new_x< world.width-hero.width){
-			hero.x = new_x;
+		if(new_x>=0 && new_x< world.width-user.width){
+			user.x = new_x;
 		} else if(new_x<0) {
-			hero.x = 0;
+			user.x = 0;
 		} else {
-			hero.x = world.width-hero.width;
+			user.x = world.width-user.width;
 		}
 	}
 
@@ -151,17 +151,17 @@ var update = function (delta) {
 	}
 
 	// Are they touching?
-	if (check_intersection(hero, monster)) {
-		hero.life--;
+	if (check_intersection(user, monster)) {
+		user.life--;
 		reset_object(monster);
 	}
-	if (check_intersection(hero, life)) {
-		hero.life++;
+	if (check_intersection(user, life)) {
+		user.life++;
 		reset_object(life);
 		life.x+=canvas.width*2;
 	}
-	if (check_intersection(hero, star)) {
-		hero.score++;
+	if (check_intersection(user, star)) {
+		user.score++;
 		reset_object(star);
 		star.x+=canvas.width;
 	}
@@ -210,9 +210,9 @@ var bgReady = false;
 var bgImage = loadSprite("images/map_cas_4.png", function(){bgReady = true;});
 
 
-// Hero image
-var heroReady = false;
-var heroImage = loadSprite("images/perso1.png", function(){heroReady = true;});
+// user image
+var userReady = false;
+var userImage = loadSprite("images/perso1.png", function(){userReady = true;});
 
 // Monster image
 var monsterReady = false;
@@ -233,7 +233,7 @@ var world = {
 	width: 640*3,
 	height: 384*3
 };
-var hero = {
+var user = {
 	life: 10,
 	score: 0,
 	x: 0,
