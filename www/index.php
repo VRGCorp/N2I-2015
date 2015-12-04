@@ -42,7 +42,7 @@
 			$cas_file='cas/'.$id.'_cas.php';
 			$reaction_file='cas/'.$id.'_reaction.php';
 			$jeu_file='cas/'.$id.'_jeu.php';
-			$classes_file='cas/'.$id.'_classes.php';
+			$classes_file='cas/'.$id.'_classes.txt';
 
 			if(file_exists($title_file)){
 				echo '<section classes="';
