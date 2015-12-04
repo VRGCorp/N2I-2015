@@ -62,7 +62,7 @@ header {
 	height: 90%;
 	padding: 5% 20%;
 	margin: 0;
-	background: #EEE url('img/burrito.png') no-repeat left;
+	background: #EEE url('img/burrito.png') no-repeat right;
 }
 
 header h1 {

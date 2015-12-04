@@ -29,7 +29,6 @@
 			un mini-jeu te mettant en situation te permettra de t'entraîner virtuellement à te sauver.
 		</p>
 	</header>
-	<img src="styles/img/burrito.png" id="mini_logo" />
 
 	<?php
 		for($id=0; $id<10; $id++){
