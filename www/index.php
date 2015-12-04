@@ -20,6 +20,7 @@
 </head>
 <body>
 	<header>
+		<h1>Los burritos locos</h1>
 		<h1>Réagir en situation d'urgence</h1>
 		<h2>Créé par la VRGCorp&nbsp;-&nbsp;Los burritos locos</h2>
 		<p>
@@ -28,7 +29,7 @@
 			un mini-jeu te mettant en situation te permettra de t'entraîner virtuellement à te sauver.
 		</p>
 	</header>
-	<img src="styles/img/burritos" id="mini_logo" />
+	<img src="styles/img/burrito.png" id="mini_logo" />
 
 	<?php
 		for($id=0; $id<10; $id++){
@@ -49,17 +50,17 @@
 				echo '</h2>';
 
 				echo '<article>';
-				echo '<h3>Qu\'est-ce que c\'est ?</h3>';
+				echo '<h3>Qu\'est-ce-que c\'est?</h3>';
 				include($cas_file);
 				echo '</article>';
 
 				echo '<article>';
-				echo '<h3>Comment réagir ?</h3>';
+				echo '<h3>Comment réagir?</h3>';
 				include($reaction_file);
 				echo '</article>';
 
 				echo '<article class="game-wrapper">';
-				echo '<h3>Entraine toi !</h3>';
+				echo '<h3>Entraine toi!</h3>';
 				include($jeu_file);
 				echo '</article>';
 
