@@ -222,8 +222,8 @@ var starImage = loadSprite("images/star.png", function(){starReady = true;});
 var world = {
 	x: 0,
 	y: 0,
-	width: canvas.width,
-	height: canvas.height
+	width: 640,
+	height: 384
 };
 var hero = {
 	life: 10,
