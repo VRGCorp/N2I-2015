@@ -32,6 +32,15 @@ function check_intersection(object_a, object_b){
 	return (object_a.x <= (object_b.x + object_b.width) && object_b.x <= (object_a.x + object_a.width) && object_a.y <= (object_b.y + object_b.height) && object_b.y <= (object_a.y + object_a.height));
 }
 
+function drawGrid(offset){
+	ctx.fillStyle = "rgb(64, 64, 64)";
+	for(x=0; x<=world.width+32; x+=32){
+		ctx.fillRect(offset.x+x, offset.y+0, 1, world.height);
+	}
+	for(y=0; y<=world.height+32; y+=32){
+		ctx.fillRect(offset.x+0, offset.y+y, world.width, 1);
+	}
+}
 
 var render = function () {
 	ctx.fillStyle = "rgb(0, 0, 0)";
@@ -44,30 +53,12 @@ var render = function () {
 	}
 	ctx.fillStyle = "rgb(128, 255, 255)";
 	ctx.fillRect(offset.x+user.destination.x+user.width/2-3, offset.y+user.destination.y+user.height/2-3, 7, 7);
-	/*
-	ctx.fillStyle = "rgb(64, 64, 64)";
-	for(x=0; x<=world.width+32; x+=32){
-		ctx.fillRect(offset.x+x, offset.y+0, 1, world.height);
-	}
-	for(y=0; y<=world.height+32; y+=32){
-		ctx.fillRect(offset.x+0, offset.y+y, world.width, 1);
-	}
-	*/
+	//drawGrid(offset);
 
-
-	if (userReady) {
-		ctx.drawImage(userImage, user.x+offset.x, user.y+offset.y);
-	}
-
-	if (monsterReady) {
-		ctx.drawImage(monsterImage, monster.x+offset.x, monster.y+offset.y);
-	}
-	if (lifeReady) {
-		ctx.drawImage(lifeImage, life.x+offset.x, life.y+offset.y);
-	}
-	if (starReady) {
-		ctx.drawImage(starImage, star.x+offset.x, star.y+offset.y);
-	}
+	ctx.drawImage(userImage, user.x+offset.x, user.y+offset.y);
+	ctx.drawImage(monsterImage, monster.x+offset.x, monster.y+offset.y);
+	ctx.drawImage(lifeImage, life.x+offset.x, life.y+offset.y);
+	ctx.drawImage(starImage, star.x+offset.x, star.y+offset.y);
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
@@ -200,14 +191,13 @@ ctx.imageSmoothingEnabled = false;
 ctx.mozImageSmoothingEnabled = false;
 ctx.webkitImageSmoothingEnabled = false;
 
-var canvas_offset=$(canvas).offset();
 
 
 
 
 // Background image
 var bgReady = false;
-var bgImage = loadSprite("images/map_cas_4.png", function(){bgReady = true;});
+var bgImage = loadSprite("images/map_cas_1.png", function(){bgReady = true;});
 
 
 // user image
