@@ -17,13 +17,12 @@ function reset_object(object) {
 function center_object(object) {
 	object.x = world.width / 2;
 	object.y = world.height / 2;
-	object.direction={x: world.width / 2, y: world.height / 2};
+	object.direction={x: object.x, y: object.y};
 };
 
 
 function reset() {
 	center_object(hero);
-	hero.x=canvas.width/3;
 	reset_object(monster);
 	reset_object(life);
 	reset_object(star);
