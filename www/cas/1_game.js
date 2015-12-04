@@ -56,7 +56,6 @@ var render = function () {
 	}
 	console.log(dangers.length);
 	for(var i=0; i<dangers.length; i++){
-		console.log(dangers[i].x+":"+dangers[i].y+":"+dangers[i].enabled);
 		if (dangers[i].enabled) {
 			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
 		}
@@ -212,7 +211,7 @@ var user = {
 };
 
 var humansToRescue = [];
-for(var n=0; n<100; n++){
+for(var n=0; n<3; n++){
 	humansToRescue.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
@@ -223,7 +222,7 @@ for(var n=0; n<100; n++){
 	});
 }
 var dangers = [];
-for(var n=0; n<100; n++){
+for(var n=0; n<10; n++){
 	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
