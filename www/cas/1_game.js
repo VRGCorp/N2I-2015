@@ -18,9 +18,6 @@ function reset_user(object) {
 
 function reset() {
 	reset_user(user);
-	reset_object(monster);
-	reset_object(life);
-	reset_object(star);
 };
 
 function check_intersection(object_a, object_b){
