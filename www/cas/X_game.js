@@ -40,14 +40,14 @@ var render = function () {
 	var offset={x: -hero.x+canvas.width/2, y: -hero.y+canvas.height/2};
 
 
-	var grid_start={x: Math.floor((hero.x-canvas.width)/32)*32, y: Math.floor((hero.y-canvas.height)/32)*32};
+	var grid_start={x: Math.floor((hero.x-canvas.width/2)/32)*32, y: Math.floor((hero.y-canvas.height/2)/32)*32};
 	grid_start.x+=offset.x;
 	grid_start.y+=offset.y;
 	ctx.fillStyle = "rgb(64, 64, 64)";
-	for(x=0; x<=canvas.width; x+=32){
+	for(x=0; x<=canvas.width+32; x+=32){
 		ctx.fillRect(grid_start.x+x, grid_start.y+0, 1, canvas.height);
 	}
-	for(y=0; y<=canvas.height; y+=32){
+	for(y=0; y<=canvas.height+32; y+=32){
 		ctx.fillRect(grid_start.x+0, grid_start.y+y, canvas.width, 1);
 	}
 
