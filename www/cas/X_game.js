@@ -337,8 +337,8 @@ var mc = new Hammer(canvas);
 
 mc.on("tap press", onTap);
 function onPan(ev) {
-	var x= ev.deltaX;
-	var y= ev.deltaY;
+	var x= ev.gesture.center.pageX;
+	var y= ev.gesture.center.pageY;
 	console.log("pan:"+x+":"+y);
 }
 
