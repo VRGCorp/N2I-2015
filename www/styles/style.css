@@ -170,6 +170,7 @@ header {
 	padding: 5% 20%;
 	margin: 0;
 	background: #EEE url('img/burrito.png') no-repeat right;
+	background-size: 50%;
 	animation: animBurrito 20s linear 10s infinite;
 }
 
@@ -179,7 +180,7 @@ header h1 {
 	text-align: center;
 }
 
-h1, h2.h1like, section h2 {
+section h2 {
 	animation: animLogo 5s linear 5s infinite;
 }
 
