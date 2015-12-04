@@ -95,6 +95,7 @@ var render = function () {
 
 // Update game objects
 var update = function (delta) {
+	console.log(hero.direction);
 	level=Math.floor(hero.score/10.0);
 	game_speed=1+level/10.0;
 	var modifier=delta*game_speed;
