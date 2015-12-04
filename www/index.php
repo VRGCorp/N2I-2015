@@ -48,7 +48,7 @@
 				echo '<section class="';
 				include($classes_file);
 				echo '">';
-				echo 'div';
+				echo '<div>';
 
 				echo '<h2>';
 				include($title_file);
