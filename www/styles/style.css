@@ -151,7 +151,7 @@ header h1 {
 	text-align: center;
 }
 
-h1, h2.h1like {
+h1, h2.h1like, section h2 {
 	animation: animLogo 10s linear 5s infinite;
 }
 
