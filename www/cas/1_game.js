@@ -67,9 +67,9 @@ var render = function () {
 
 
 	if(user.score==humansToRescue.length){
-		ctx.fillStyle = "rgb(255, 192, 192)";
-	}else {
 		ctx.fillStyle = "rgb(192, 255, 192)";
+	}else {
+		ctx.fillStyle = "rgb(255, 192, 192)";
 	}
 
 	ctx.font = "24px Helvetica";
