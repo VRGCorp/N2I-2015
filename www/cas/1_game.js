@@ -127,6 +127,7 @@ var update = function (delta) {
 	}
 	for(var i=0; i<dangers.length; i++){
 		if (dangers[i].enabled && check_intersection(user, dangers[i])) {
+			window.alert("La fumée de l'incendie peut vous asphixier, évitez la :)");
 			reset_user(user);
 		}
 	}
@@ -277,6 +278,11 @@ for(var n=0; n<30; n++){
 				dangers[n].x= Math.random()*world.width;
 				dangers[n].y= Math.random()*world.height;
 			}
+		}
+		if(check_intersection(dangers[n], user)){
+			error=true;
+			dangers[n].x= Math.random()*world.width;
+			dangers[n].y= Math.random()*world.height;
 		}
 
 	}
