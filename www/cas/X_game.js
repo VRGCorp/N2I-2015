@@ -90,16 +90,6 @@ var update = function (delta) {
 	level=Math.floor(hero.score/10.0);
 	game_speed=1+level/10.0;
 	var modifier=delta*game_speed;
-	/*if (pressed) {
-		var new_y = hero.y-hero.speed * modifier;
-		if(new_y>=0){
-			hero.y = new_y;
-		} else {
-			hero.y = 0;
-		}
-		hero.x=mouse_x;
-		hero.y=mouse_y;
-	}*/
 
 
 	if(released){
@@ -109,14 +99,23 @@ var update = function (delta) {
 	var dir_x=hero.destination.x-hero.x;
 	var dir_y=hero.destination.y-hero.y;
 	var distance=Math.sqrt(dir_x*dir_x + dir_y*dir_y);
-	dir_x/=distance;
-	dir_y/=distance;
-	var new_x = hero.y-hero.speed * modifier*dir_x;
-	var new_y = hero.y-hero.speed * modifier*dir_y;
-	if(new_y>=0){
-		hero.y = new_y;
-	} else {
-		hero.y = 0;
+	if(distance!=0){
+		dir_x/=distance;
+		dir_y/=distance;
+		var new_x = hero.y-hero.speed * modifier*dir_x;
+		var new_y = hero.y-hero.speed * modifier*dir_y;
+
+		if(new_y>=0 && new_y< canvas.height-hero.height){
+			hero.y = new_y;
+		} else {
+			hero.y = 0;
+		}
+
+		if(new_x>=0 && new_x< canvas.width-hero.width){
+			hero.x = new_x;
+		} else {
+			hero.x = 0;
+		}
 	}
 
 
