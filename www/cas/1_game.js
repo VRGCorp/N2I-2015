@@ -49,17 +49,19 @@ var render = function () {
 
 	ctx.drawImage(user.img, user.x+offset.x, user.y+offset.y);
 
-	for(var i; i<humansToRescue.length; i++){
+	for(var i=0; i<humansToRescue.length; i++){
 		if (humansToRescue[i].enabled) {
 			ctx.drawImage(humansToRescue[i].img, humansToRescue[i].x+offset.x, humansToRescue[i].y+offset.y);
 		}
 	}
-	for(var i; i<dangers.length; i++){
-		console.log(dangers[i].x+":"+dangers[i].y+":"+dangers[i].enabled);
+	console.log(dangers.length);
+	for(var i=0; i<dangers.length; i++){
 		if (dangers[i].enabled) {
 			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
 		}
 	}
+	ctx.fillStyle = "rgba(128, 250, 128, .5)";
+	ctx.fillRect(offset.x+rassemblement.x, offset.y+rassemblement.y, +rassemblement.width, +rassemblement.height);
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
@@ -124,14 +126,13 @@ var update = function (delta) {
 			user.x = world.width-user.width;
 		}
 	}
-	for(var i; i<humansToRescue.length; i++){
+	for(var i=0; i<humansToRescue.length; i++){
 		if (humansToRescue[i].enabled && check_intersection(user, humansToRescue[i])) {
 			user.score++;
 			humansToRescue[i].enabled=false;
 		}
 	}
-	for(var i; i<100; i++){
-		console.log(dangers[i].x+":"+dangers[i].y+":"+dangers[i].enabled);
+	for(var i=0; i<dangers.length; i++){
 		if (dangers[i].enabled && check_intersection(user, dangers[i])) {
 			reset_user(user);
 		}
@@ -197,8 +198,8 @@ var fumeeImage = loadSprite("images/Fumee1.png", function(){fumeeReady = true;})
 var world = {
 	x: 0,
 	y: 0,
-	width: 640*3/6,
-	height: 384*3/6
+	width: 640*3,
+	height: 384*3
 };
 var user = {
 	x: 0,
@@ -207,31 +208,61 @@ var user = {
 	height: 32,
 	img: userImage,
 	destination: {x: 0, y: 0},
-	speed: 128,
+	speed: 256,
 	score: 0
 };
 
+
+var rassemblement = {
+	x: 275,
+	y: 140,
+	width: 64,
+	height: 150
+};
+
 var humansToRescue = [];
-for(var n=0; n<100; n++){
-	humansToRescue[n]={
-		x: Math.random()*world.width,
-		y: Math.random()*world.height,
-		width: 32,
-		height: 32,
-		img: Math.random()<.5 ? humanAImage :humanBImage,
-		enabled: true
-	}
-}
+humansToRescue.push({
+	x: world.width*1./5,
+	y: world.height*1./4,
+	width: 32,
+	height: 32,
+	img: humanAImage,
+	enabled: true
+});
+humansToRescue.push({
+	x: world.width*1./5,
+	y: world.height*3./4,
+	width: 32,
+	height: 32,
+	img: humanAImage,
+	enabled: true
+});
+humansToRescue.push({
+	x: world.width*3./5,
+	y: world.height*1./4,
+	width: 32,
+	height: 32,
+	img: humanAImage,
+	enabled: true
+});
+humansToRescue.push({
+	x: world.width*3./5,
+	y: world.height*3./4,
+	width: 32,
+	height: 32,
+	img: humanAImage,
+	enabled: true
+});
 var dangers = [];
-for(var n=0; n<100; n++){
-	dangers[n]={
+for(var n=0; n<30; n++){
+	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
-		width: 32,
-		height: 32,
+		width: 32+32*Math.random(),
+		height: 32+32*Math.random(),
 		img: fumeeImage,
 		enabled: true
-	}
+	});
 }
 
 // Handle keyboard input
@@ -274,7 +305,7 @@ function mouse_move(e) {
 
 function mouse_press(e) {
 	var pos=pointer_pos(canvas, e);
-
+	console.log(pos);
 	pressed = true;
 	mouse_x = pos.x;
 	mouse_y = pos.y;
