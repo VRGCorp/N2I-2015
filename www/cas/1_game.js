@@ -63,10 +63,10 @@ var render = function () {
 	ctx.fillRect(offset.x+rassemblement.x, offset.y+rassemblement.y, +rassemblement.width, +rassemblement.height);
 
 	ctx.fillStyle = "rgba(32, 32, 32, .9)";
-	ctx.fillRect(0, 0, canvas.width, 40);
+	ctx.fillRect(0, 0, canvas.width, 80);
 
 
-	ctx.fillStyle = "rgb(0, 0, 0)";
+	ctx.fillStyle = "rgb(255, 255, 255)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
