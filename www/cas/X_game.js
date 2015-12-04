@@ -14,8 +14,9 @@ function reset_object(object) {
 };
 
 function center_object(object) {
-	object.x = canvas.width / 2;
-	object.y = canvas.height / 2;
+	object.x = world.width / 2;
+	object.y = world.height / 2;
+	object.direction={x: world.width / 2, y: world.height / 2};
 };
 
 
