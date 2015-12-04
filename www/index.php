@@ -21,7 +21,7 @@
 <body>
 	<header>
 		<h1>Los burritos locos</h1>
-		<h2>Réagir en situation d'urgence</h2>
+		<h2 style="text-align:center;">Réagir en situation d'urgence</h2>
 		<h2>Créé par la VRGCorp&nbsp;-&nbsp;Los burritos locos</h2>
 		<p>
 			Si tu as entre 6 et 10 ans, ce site est fait pour toi&nbsp;! Réalisé par des étudiants en informatique, il te 

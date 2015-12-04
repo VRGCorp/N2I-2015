@@ -124,7 +124,6 @@ body {
 
 h2 {
 	font-size: 2em;
-	line-height:2.5em;
 }
 h1, h2, h3, h4, h5, h1 *, h-n * {
 	font-family: groboldregular;
@@ -142,7 +141,6 @@ header h1 {
 	margin-top: 0;
 	font-size: 3em;
 	text-align: center;
-	line-height: 3.1em;
 }
 
 h1, section h2 {
@@ -249,6 +247,7 @@ section article.game-wrapper > div {
 
 	header h1, header h2 {
 		padding: 1%;
+		line-height: initial;
 	}
 
 	section > div {
