@@ -1,4 +1,4 @@
-Le danger est l'air contaminé, si il est dehors il faut se réfugier d'urgence dans un bâtiment.
-Une fois à l'intérieur il est très important de fermer les fenêtres et les portes et d'empêcher l'air d'entrer dans l'abri.
-Si l'air toxique est à l'intérieur il faut vite sortir du bâtiment et respirer le moins possible.
-Une fois en sécurité appeler les secours (le 18 ou le 112).
+Le danger est l'air contaminÃ©, si il est dehors il faut se rÃ©fugier d'urgence dans un bÃ¢timent.
+Une fois Ã  l'intÃ©rieur il est trÃ¨s important de fermer les fenÃªtres et les portes et d'empÃªcher l'air d'entrer dans l'abri.
+Si l'air toxique est Ã  l'intÃ©rieur il faut vite sortir du bÃ¢timent et respirer le moins possible.
+Une fois en sÃ©curitÃ© appeler les secours (le 18 ou le 112).

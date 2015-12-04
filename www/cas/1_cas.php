@@ -1,4 +1,4 @@
 Les incendies sont des feux violents et destructeurs.
-Ils peuvent être causés par des accidents ou par des criminels.
-Ces feux se déclarent souvent dans des forêts en été par temps sec.
-Les flames ne sont pas le seul risque, ils répandent aussi des fumées qui peuvent être très toxiques si on les respire.
+Ils peuvent Ãªtre causÃ©s par des accidents ou par des criminels.
+Ces feux se dÃ©clarent souvent dans des forÃªts en Ã©tÃ© par temps sec.
+Les flames ne sont pas le seul risque, ils rÃ©pandent aussi des fumÃ©es qui peuvent Ãªtre trÃ¨s toxiques si on les respire.
