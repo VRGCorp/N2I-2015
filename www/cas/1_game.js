@@ -62,7 +62,11 @@ var render = function () {
 	ctx.fillStyle = "rgba(128, 250, 128, .5)";
 	ctx.fillRect(offset.x+rassemblement.x, offset.y+rassemblement.y, +rassemblement.width, +rassemblement.height);
 
-	ctx.fillStyle = "rgb(0, 64, 0)";
+	ctx.fillStyle = "rgba(32, 32, 32, .9)";
+	ctx.fillRect(0, 0, canvas.width, 40);
+
+
+	ctx.fillStyle = "rgb(0, 0, 0)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
@@ -72,7 +76,7 @@ var render = function () {
 		ctx.fillText("Objectif : sauver les personnes dans le batiment.", 8, 24*0+8*1);
 	}
 
-	ctx.fillStyle = "rgb(0, 64, 0)";
+	ctx.fillStyle = "rgb(0, 0, 0)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
