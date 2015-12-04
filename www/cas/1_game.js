@@ -62,7 +62,7 @@ var render = function () {
 	ctx.fillStyle = "rgba(128, 250, 128, .5)";
 	ctx.fillRect(offset.x+rassemblement.x, offset.y+rassemblement.y, +rassemblement.width, +rassemblement.height);
 
-	ctx.fillStyle = "rgb(250, 250, 250)";
+	ctx.fillStyle = "rgb(0, 64, 0)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
@@ -72,7 +72,7 @@ var render = function () {
 		ctx.fillText("Objectif : sauver les personnes dans le batiment.", 8, 24*0+8*1);
 	}
 
-	ctx.fillStyle = "rgb(250, 250, 250)";
+	ctx.fillStyle = "rgb(0, 64, 0)";
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
@@ -140,8 +140,7 @@ var update = function (delta) {
 		} else {
 			window.alert("Il reste des personnes piégés dans le batiment !");
 			pressed=false;
-			user.x=rassemblement.x-user.width*1.5;
-			user.destination.x=user.x;
+			reset_user(user);
 		}
 	}
 };
