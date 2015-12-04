@@ -100,7 +100,6 @@
 	}
 }
 
-
 /************************************/
 /*   Propriétés CSS                 */
 /************************************/
@@ -142,6 +141,11 @@ header {
 header h1 {
 	margin-top: 0;
 	font-size: 3em;
+	text-align: center;
+	line-height: 3.6em;
+}
+
+h1 {
 	animation: animLogo 10s linear 5s infinite;
 }
 
@@ -231,4 +235,21 @@ section h2 {
 
 section article.game-wrapper > div {
   text-align: center;
+}
+
+@media handheld {
+
+	header {
+		width: 90%;
+		height: 90%;
+		padding: 5%;
+		margin: 0;
+		background: #EEE url('img/burrito.png') no-repeat right;
+	}
+	section > div {
+		width: 90%;
+		height: 90%;
+		padding: 5%;
+	}
+	
 }
