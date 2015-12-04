@@ -45,7 +45,7 @@
 			$classes_file='cas/'.$id.'_classes.txt';
 
 			if(file_exists($title_file)){
-				echo '<section classes="';
+				echo '<section class="';
 				include($classes_file);
 				echo '">';
 
