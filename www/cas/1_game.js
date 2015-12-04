@@ -54,7 +54,6 @@ var render = function () {
 			ctx.drawImage(humansToRescue[i].img, humansToRescue[i].x+offset.x, humansToRescue[i].y+offset.y);
 		}
 	}
-	console.log(dangers.length);
 	for(var i=0; i<dangers.length; i++){
 		if (dangers[i].enabled) {
 			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
@@ -88,7 +87,7 @@ var update = function (delta) {
 
 	if(pressed){
 		user.destination={x: user.x-canvas.width/2 + mouse_x-user.width/2, y: user.y-canvas.height/2 + mouse_y-user.height/2};
-		//console.log(user.destination);
+		console.log(user.destination);
 		released=false;
 	}
 	var dir_x=user.destination.x-user.x;
@@ -295,7 +294,6 @@ function mouse_move(e) {
 
 function mouse_press(e) {
 	var pos=pointer_pos(canvas, e);
-	console.log(pos);
 	pressed = true;
 	mouse_x = pos.x;
 	mouse_y = pos.y;
