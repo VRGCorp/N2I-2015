@@ -9,8 +9,9 @@ function loadSprite(src, callback){
 }
 
 function reset_object(object) {
-	object.x = object.width + canvas.width;
-	object.y = Math.random() * (canvas.height-object.height);
+	object.x = 0;
+	object.y = 0;
+	object.direction={x: 0, y: 0};
 };
 
 function center_object(object) {

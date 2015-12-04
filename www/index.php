@@ -20,21 +20,8 @@
 </head>
 <body>
 	<header>
-		<img src="/images/team.jpg"></img>
+		<h1>Los burritos locos</h1>
 	</header>
-	<nav>
-		<ul>
-			<li>
-				item 1
-			</li>
-			<li>
-				item 2
-			</li>
-			<li>
-				item 3
-			</li>
-		</ul>
-	</nav>
 
 	<?php
 		for($id=0; $id<10; $id++){
