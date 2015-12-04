@@ -231,6 +231,7 @@ for(var n=0; n<100; n++){
 		img: fumeeImage,
 		enabled: true
 	}
+	console.log(dangers[n].x+":"+dangers[n].y);
 }
 
 // Handle keyboard input
