@@ -48,6 +48,7 @@
 				echo '<section class="';
 				include($classes_file);
 				echo '">';
+				echo 'div';
 
 				echo '<h2>';
 				include($title_file);
@@ -65,6 +66,7 @@
 				include($jeu_file);
 				echo '</article>';
 
+				echo '</div>';
 				echo '</section>';
 			}
 
