@@ -60,6 +60,8 @@ var render = function () {
 			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y);
 		}
 	}
+	ctx.fillStyle = "rgba(128, 250, 128, .5)";
+	ctx.fillRect(offset.x+rassemblement.x, offset.y+rassemblement.y, +rassemblement.width, +rassemblement.height);
 
 	ctx.fillStyle = "rgb(250, 250, 250)";
 	ctx.font = "24px Helvetica";
@@ -210,6 +212,14 @@ var user = {
 	score: 0
 };
 
+
+var rassemblement = {
+	x: 275,
+	y: 140,
+	width: 64,
+	height: 150
+};
+
 var humansToRescue = [];
 humansToRescue.push({
 	x: world.width*1./5,
@@ -248,8 +258,8 @@ for(var n=0; n<30; n++){
 	dangers.push({
 		x: Math.random()*world.width,
 		y: Math.random()*world.height,
-		width: 32,
-		height: 32,
+		width: 32+32*Math.random(),
+		height: 32+32*Math.random(),
 		img: fumeeImage,
 		enabled: true
 	});
