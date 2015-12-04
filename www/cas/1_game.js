@@ -76,15 +76,13 @@ var render = function () {
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
 	if(user.score==humansToRescue.length){
-		ctx.fillText("Vous avez sauvé tout le monde, dépéchez vous de sortir !", 8, 24*0+8*1);
+		ctx.fillText("Vous avez sauvé tout le monde,", 8, 24*0+8*1);
+		ctx.fillText("Dépéchez vous de sortir !", 8, 24*1+8*2);
 	} else {
-		ctx.fillText("Objectif : sauver les personnes dans le batiment.", 8, 24*0+8*1);
+		ctx.fillText("Sauvez les personnes dans le batiment.", 8, 24*0+8*1);
+		ctx.fillText("Personnes sauvées: " + user.score+"/"+humansToRescue.length, 8, 24*1+8*2);
 	}
 
-	ctx.font = "24px Helvetica";
-	ctx.textAlign = "left";
-	ctx.textBaseline = "top";
-	ctx.fillText("Personnes sauvées: " + user.score+"/"+humansToRescue.length, 8, 24*1+8*2);
 
 
 };
