@@ -57,6 +57,7 @@ var render = function () {
 	for(var i=0; i<dangers.length; i++){
 		if (dangers[i].enabled) {
 			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y, dangers[i].width, dangers[i].height);
+			ctx.drawImage(dangers[i].img, dangers[i].x+offset.x, dangers[i].y+offset.y, dangers[i].width, dangers[i].height);
 		}
 	}
 	ctx.fillStyle = "rgba(128, 250, 128, .5)";
