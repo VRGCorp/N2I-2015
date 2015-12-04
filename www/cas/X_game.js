@@ -253,7 +253,7 @@ var release_y = 0;
 
 // http://miloq.blogspot.fr/2011/05/coordinates-mouse-click-canvas.html
 function pointer_pos(canvas, event, tactile){
-	console.log((event.pageX - canvas_offset.left)+":"+(event.pageY - offset.top));
+	console.log((event.pageX - canvas_offset.left)+":"+(event.pageY - canvas_offset.top));
 	if(tactile){
 		x=event.pageX - canvas_offset.left;
 		y=event.pageY - canvas_offset.top;
