@@ -101,7 +101,7 @@ var update = function (delta) {
 		hero.y=mouse_y;
 	}*/
 
-	
+
 	if(released){
 		hero.destination={mouse_x, mouse_y};
 		released=false;
@@ -226,6 +226,7 @@ var hero = {
 	score: 0,
 	x: 0,
 	y: 0,
+	destination: {x: 0, y: 0},
 	width: 32,
 	height: 32,
 	speed: 256 // movement in pixels per second
