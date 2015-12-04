@@ -14,7 +14,7 @@
 <html lang="fr">
 <head>
 	<meta charset="utf-8">
-	<title>Titre de la page</title>
+	<title>Lors burritos locos</title>
 	<link rel="stylesheet" href="styles/style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
