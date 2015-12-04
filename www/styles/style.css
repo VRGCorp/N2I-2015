@@ -146,3 +146,7 @@ section.jeu_vert > div {
 section h2 {
 	text-align: center;
 }
+
+section article.game-wrapper > div {
+  text-align: center;
+}
