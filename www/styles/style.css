@@ -58,9 +58,15 @@ h1, h2, h3, h4, h5, h1 *, h-n * {
 }
 
 header {
-	background-color: #EEE;
-	width: 100%;
+	width: 60%;
+	height: 90%;
+	padding: 5% 20%;
 	margin: 0;
+	background: #EEE url('img/burrito.png') no-repeat left;
+}
+
+header h1 {
+	margin-top: 0;
 }
 
 section {
@@ -149,10 +155,4 @@ section h2 {
 
 section article.game-wrapper > div {
   text-align: center;
-}
-
-#mini_logo {
-	position: relative;
-	bottom: 0;
-	left: 0;
 }
