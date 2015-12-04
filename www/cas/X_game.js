@@ -40,6 +40,10 @@ var render = function () {
 	var offset={x: -hero.x+canvas.width/2, y: -hero.y+canvas.height/2};
 
 
+	if (bgReady) {
+		ctx.drawImage(bgImage, world.x+offset.x, world.y+offset.y, world.width, world.height);
+	}
+	
 	ctx.fillStyle = "rgb(64, 64, 64)";
 	for(x=0; x<=world.width+32; x+=32){
 		ctx.fillRect(offset.x+x, offset.y+0, 1, world.height);
@@ -49,9 +53,6 @@ var render = function () {
 	}
 
 
-	if (bgReady) {
-		ctx.drawImage(bgImage, world.x+offset.x, world.y+offset.y, world.width, world.height);
-	}
 
 	if (heroReady) {
 		ctx.drawImage(heroImage, hero.x+offset.x, hero.y+offset.y);
