@@ -195,6 +195,10 @@ canvas.height = 320;
 document.getElementById('game-wrapper-'+case_id).appendChild(canvas);
 
 var ctx = canvas.getContext("2d");
+ctx.imageSmoothingEnabled = false;
+ctx.mozImageSmoothingEnabled = false;
+ctx.webkitImageSmoothingEnabled = false;
+
 var canvas_offset=$(canvas).offset();
 
 

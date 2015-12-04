@@ -42,17 +42,17 @@
 				echo '</h2>';
 
 				echo '<article>';
-				echo '<h3>Qu\'est-ce-que c\'est?</h3>';
+				echo '<h3>Qu\'est-ce que c\'est ?</h3>';
 				include($cas_file);
 				echo '</article>';
 
 				echo '<article>';
-				echo '<h3>Comment réagir?</h3>';
+				echo '<h3>Comment réagir ?</h3>';
 				include($reaction_file);
 				echo '</article>';
 
 				echo '<article class="game-wrapper">';
-				echo '<h3>Entraine toi!</h3>';
+				echo '<h3>Entraine toi !</h3>';
 				include($jeu_file);
 				echo '</article>';
 
