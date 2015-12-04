@@ -134,7 +134,7 @@ p {
 }
 
 p:first-letter {
-	margin-left: 10px;
+	margin-left: 25px;
 }
 
 header {
@@ -158,6 +158,13 @@ h1, h2.h1like {
 h2.h1like {
 	margin-bottom: 45px;
 	text-align: center;
+}
+
+img.illustration {
+	width: 10%;
+	height: auto;
+	float: right;
+	margin: 2%;
 }
 
 section {
