@@ -37,6 +37,33 @@
 /*   Animation du titre             */
 /************************************/
 
+@-moz-keyframes animBurrito {
+	0% {
+		background-size: 50%;
+	}
+
+	50% {
+		background-size: 40%;
+	}
+
+	100% {
+		background-size: 50%;
+	}
+}
+@keyframes animBurrito {
+	0% {
+		background-size: 50%;
+	}
+
+	50% {
+		background-size: 40%;
+	}
+
+	100% {
+		background-size: 50%;
+	}
+}
+
 @-moz-keyframes animLogo {
 	0% {
 		margin-left: 0;
@@ -143,6 +170,7 @@ header {
 	padding: 5% 20%;
 	margin: 0;
 	background: #EEE url('img/burrito.png') no-repeat right;
+	animation: animBurrito 20s linear 10s infinite;
 }
 
 header h1 {
@@ -152,7 +180,7 @@ header h1 {
 }
 
 h1, h2.h1like, section h2 {
-	animation: animLogo 10s linear 5s infinite;
+	animation: animLogo 5s linear 5s infinite;
 }
 
 h2.h1like {
