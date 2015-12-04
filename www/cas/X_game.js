@@ -42,6 +42,8 @@ var render = function () {
 	if (bgReady) {
 		ctx.drawImage(bgImage, world.x+offset.x, world.y+offset.y, world.width, world.height);
 	}
+	ctx.fillStyle = "rgb(255, 255, 255)";
+	ctx.fillRect(offset.x+user.destination.x-1, offset.y+user.destination.y-, 3, 3);
 	/*
 	ctx.fillStyle = "rgb(64, 64, 64)";
 	for(x=0; x<=world.width+32; x+=32){
