@@ -143,14 +143,7 @@ var update = function (delta) {
 	}
 	if (check_intersection(user, rassemblement)) {
 		if(user.score==humansToRescue.length){
-			pressed=false;
-			user.x=rassemblement.x-user.width*1.5;
-			user.destination.x=user.x;
-			user.destination.y=user.y;
-			user.gagne=false;
-		} else {
-			pressed=false;
-			reset_user(user);
+			user.gagne=true;
 		}
 	}
 };
