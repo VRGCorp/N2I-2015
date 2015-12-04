@@ -17,7 +17,7 @@ function reset_user(object) {
 
 
 function reset() {
-	center_object(user);
+	reset_user(user);
 	reset_object(monster);
 	reset_object(life);
 	reset_object(star);
